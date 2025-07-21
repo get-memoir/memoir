@@ -33,6 +33,7 @@ class ProfileControllerTest extends TestCase
                 'last_name' => 'Scott',
                 'nickname' => 'Michael',
                 'email' => 'michael.scott@dundermifflin.com',
+                'locale' => 'en',
             ]);
 
         $response
@@ -45,6 +46,7 @@ class ProfileControllerTest extends TestCase
         $this->assertSame('Scott', $user->last_name);
         $this->assertSame('Michael', $user->nickname);
         $this->assertSame('michael.scott@dundermifflin.com', $user->email);
+        $this->assertSame('en', $user->locale);
         $this->assertNull($user->email_verified_at);
     }
 
@@ -60,6 +62,7 @@ class ProfileControllerTest extends TestCase
                 'last_name' => 'Scott',
                 'nickname' => 'Michael',
                 'email' => $user->email,
+                'locale' => 'en',
             ]);
 
         $response

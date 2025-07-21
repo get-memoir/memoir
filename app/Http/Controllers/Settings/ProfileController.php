@@ -37,6 +37,7 @@ class ProfileController extends Controller
                 'max:255',
                 Rule::unique(User::class)->ignore($user->id),
             ],
+            'locale' => ['required', 'string', Rule::in(['en', 'fr'])],
         ]);
 
         $user->fill($validated);
