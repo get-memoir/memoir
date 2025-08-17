@@ -20,16 +20,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
 
       - name: Prepare The Environment
         run: cp tests/.env.ci.mysql .env
 
-      - name: Install NPM Dependencies
-        run: npm ci
+      - name: Install Bun Dependencies
+        run: bun install --frozen-lockfile
 
       - name: Build Assets
-        run: npm run build
+        run: bun run build
 
       - name: Create Database
         run: |
