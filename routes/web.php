@@ -3,12 +3,14 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\LocaleController;
-use App\Http\Controllers\Marketing\MarketingController;
+use App\Http\Controllers\Marketing;
 use App\Http\Controllers\Organizations;
 use App\Http\Controllers\Settings;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [MarketingController::class, 'index'])->name('marketing.index');
+Route::get('/', [Marketing\MarketingController::class, 'index'])->name('marketing.index');
+Route::get('/docs', [Marketing\Docs\MarketingDocController::class, 'index'])->name('marketing.docs.index');
+Route::get('/docs/api/authentication', [Marketing\Docs\AuthenticationController::class, 'index'])->name('marketing.docs.api.authentication');
 
 Route::put('/locale', [LocaleController::class, 'update'])->name('locale.update');
 
