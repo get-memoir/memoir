@@ -126,14 +126,14 @@ final class DatabaseSeeder extends Seeder
 
         foreach ($this->organization->jobDisciplines as $jobDiscipline) {
             foreach ($jobLevels as $name) {
-            new CreateJobLevel(
-                organization: $this->organization,
-                jobDiscipline: $jobDiscipline,
-                user: $this->michael,
-                jobLevelName: $name,
-                description: null,
-            )->execute();
+                new CreateJobLevel(
+                    organization: $this->organization,
+                    jobDiscipline: $jobDiscipline,
+                    user: $this->michael,
+                    jobLevelName: $name,
+                    description: null,
+                )->execute();
+            }
         }
-    }
     }
 }
