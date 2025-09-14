@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'description' => env('APP_DESCRIPTION', 'Async provides all the tools you need to manage your organization.'),
+    'description' => env('APP_DESCRIPTION', 'Serious journaling for serious minds.'),
 
     /*
     |--------------------------------------------------------------------------

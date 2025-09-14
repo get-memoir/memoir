@@ -32,7 +32,7 @@ final class PopulateDefaultPermissionsInOrganization
             description: 'Has all permissions',
         )->execute();
 
-        foreach (config('async.permissions') as $permission) {
+        foreach (config('memoir.permissions') as $permission) {
             new AddPermissionToRole(
                 organization: $this->organization,
                 user: $this->user,

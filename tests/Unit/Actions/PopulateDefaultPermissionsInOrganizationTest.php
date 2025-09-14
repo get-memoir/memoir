@@ -35,7 +35,7 @@ it('populates default permissions in an organization', function (): void {
     expect($adminRole->description)->toBe('Has most permissions');
 
     // Assert Owner has all permissions from config
-    $configPermissions = config('async.permissions');
+    $configPermissions = config('memoir.permissions');
     $expectedOwnerPermissions = [];
     foreach ($configPermissions as $permission) {
         $expectedOwnerPermissions[] = $permission['permissions'][0]['key'];
@@ -83,7 +83,7 @@ it('assigns all config permissions to owner role', function (): void {
         ->first();
 
     // Get expected permissions from config
-    $configPermissions = config('async.permissions');
+    $configPermissions = config('memoir.permissions');
     $expectedPermissionCount = count($configPermissions);
 
     expect($ownerRole->permissions)
