@@ -15,7 +15,7 @@
           <div class="flex items-center gap-x-2">
             <a href="" class="group flex items-center gap-x-2 transition-transform ease-in-out">
               <div class="flex h-7 w-7 items-center justify-center transition-all duration-400 group-hover:-translate-y-0.5 group-hover:-rotate-3">
-                <x-logo width="25" height="25" />
+                <x-image src="logo/30x30" width="25" height="25" alt="Memoir logo" />
               </div>
             </a>
             <h1 class="mb-2 text-2xl font-semibold text-gray-900">
