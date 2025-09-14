@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace App\Actions;
 
 use App\Models\EmailSent;
-use App\Models\Organization;
 use App\Models\User;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Stevebauman\Purify\Facades\Purify;
 
 final class CreateEmailSent
@@ -15,7 +13,6 @@ final class CreateEmailSent
     private EmailSent $emailSent;
 
     public function __construct(
-        public ?Organization $organization,
         public User $user,
         public ?string $uuid,
         public string $emailType,
@@ -26,18 +23,10 @@ final class CreateEmailSent
 
     public function execute(): EmailSent
     {
-        $this->validate();
         $this->sanitize();
         $this->create();
 
         return $this->emailSent;
-    }
-
-    private function validate(): void
-    {
-        if ($this->organization && $this->user->isPartOfOrganization($this->organization) === false) {
-            throw new ModelNotFoundException('User is not part of the organization.');
-        }
     }
 
     /**
@@ -55,7 +44,6 @@ final class CreateEmailSent
     private function create(): void
     {
         $this->emailSent = EmailSent::create([
-            'organization_id' => $this->organization instanceof Organization ? $this->organization->id : null,
             'user_id' => $this->user->id,
             'uuid' => $this->uuid,
             'email_type' => $this->emailType,

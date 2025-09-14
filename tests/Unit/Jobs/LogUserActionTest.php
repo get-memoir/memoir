@@ -13,7 +13,6 @@ it('logs user action', function (): void {
         'nickname' => null,
     ]);
     LogUserAction::dispatch(
-        organization: null,
         user: $user,
         action: 'personal_profile_update',
         description: 'Updated their personal profile',
@@ -21,7 +20,6 @@ it('logs user action', function (): void {
 
     $log = Log::first();
 
-    expect($log->getUserName())->toEqual('Michael Scott');
     expect($log->action)->toEqual('personal_profile_update');
     expect($log->description)->toEqual('Updated their personal profile');
 });

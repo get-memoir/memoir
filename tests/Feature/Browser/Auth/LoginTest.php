@@ -14,7 +14,7 @@ it('logs in a user', function (): void {
     $page->type('email', 'michael.scott@dundermifflin.com');
     $page->type('password', 'password');
     $page->press('@login-button');
-    $page->assertPathIs('/organizations');
+    $page->assertPathIs('/journals');
 });
 
 it('logs in a user using a magic link', function (): void {

@@ -44,7 +44,6 @@ final class CreateAccount
     private function log(): void
     {
         LogUserAction::dispatch(
-            organization: null,
             user: $this->user,
             action: 'account_created',
             description: 'Created an account',

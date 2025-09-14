@@ -6,12 +6,12 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Models\Organization;
+use App\Models\Journal;
 
 /**
- * @mixin Organization
+ * @mixin Journal
  */
-final class OrganizationResource extends JsonResource
+final class JournalResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -21,17 +21,17 @@ final class OrganizationResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'type' => 'organization',
+            'type' => 'journal',
             'id' => (string) $this->id,
             'attributes' => [
                 'name' => $this->name,
                 'slug' => $this->slug,
-                'avatar' => $this->getAvatar(),
+                'avatar' => $this->avatar(),
                 'created_at' => $this->created_at->timestamp,
                 'updated_at' => $this->updated_at->timestamp,
             ],
             'links' => [
-                'self' => route('api.organizations.show', $this->id),
+                'self' => route('api.journal.show', $this->id),
             ],
         ];
     }

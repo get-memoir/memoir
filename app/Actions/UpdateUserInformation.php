@@ -56,7 +56,6 @@ final readonly class UpdateUserInformation
     private function log(): void
     {
         LogUserAction::dispatch(
-            organization: null,
             user: $this->user,
             action: 'personal_profile_update',
             description: 'Updated their personal profile',
