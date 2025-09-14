@@ -175,6 +175,6 @@ jobs:
 
       - name: Run tests (pgsql)
         if: matrix.connection == 'pgsql'
-        run: vendor/bin/pest --ci --parallel
+        run: vendor/bin/pest --ci
         env:
           DB_CONNECTION: ${{ matrix.connection }}
