@@ -17,8 +17,6 @@ final class DatabaseSeeder extends Seeder
 {
     private User $michael;
 
-    private Organization $organization;
-
     /**
      * Seed the application's database.
      */
@@ -47,7 +45,7 @@ final class DatabaseSeeder extends Seeder
 
     private function addOrganization(): void
     {
-        $this->organization = new CreateOrganization(
+        new CreateOrganization(
             user: $this->michael,
             organizationName: 'Dunder Mifflin',
         )->execute();
