@@ -6,8 +6,6 @@ use App\Models\EmailSent;
 use App\Models\User;
 use App\Actions\CreateEmailSent;
 use Illuminate\Support\Str;
-use App\Models\Organization;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Queue;
 
 it('creates an email sent', function (): void {

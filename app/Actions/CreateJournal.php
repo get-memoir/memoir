@@ -6,7 +6,6 @@ namespace App\Actions;
 
 use App\Jobs\LogUserAction;
 use App\Models\Journal;
-use App\Models\Organization;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;

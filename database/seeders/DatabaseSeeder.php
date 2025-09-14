@@ -8,7 +8,6 @@ use App\Actions\CreateAccount;
 use App\Actions\CreateJournal;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use App\Actions\CreateOrganization;
 
 final class DatabaseSeeder extends Seeder
 {

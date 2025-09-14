@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Database\Factories;
 
 use App\Models\Journal;
-use App\Models\Log;
-use App\Models\Organization;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -27,7 +25,20 @@ final class JournalFactory extends Factory
         return [
             'user_id' => User::factory(),
             'name' => fake()->word(),
-            'slug' => fake()->slug(),
+            'slug' => null,
         ];
+    }
+
+    /**
+     * Configure the model factory.
+     */
+    public function configure(): static
+    {
+        return $this->afterCreating(function (Journal $journal): void {
+            if ($journal->slug === null) {
+                $journal->slug = $journal->id . '-' . \Illuminate\Support\Str::slug($journal->name);
+                $journal->save();
+            }
+        });
     }
 }

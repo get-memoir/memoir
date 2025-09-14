@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use App\Models\Journal;
-use App\Models\Organization;
 use App\Models\User;
 use Carbon\Carbon;
 use Laravel\Sanctum\Sanctum;
@@ -99,7 +98,7 @@ it('can create a new journal', function () use ($singleJsonStructure): void {
     Sanctum::actingAs($user);
 
     $response = $this->json('POST', '/api/journals', [
-                'name' => 'Life',
+        'name' => 'Life',
     ]);
 
     $response->assertStatus(201);

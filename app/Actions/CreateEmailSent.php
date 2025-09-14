@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace App\Actions;
 
 use App\Models\EmailSent;
-use App\Models\Organization;
 use App\Models\User;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Stevebauman\Purify\Facades\Purify;
 
 final class CreateEmailSent

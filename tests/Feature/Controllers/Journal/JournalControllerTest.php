@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use App\Models\Journal;
-use App\Models\Organization;
 use App\Models\User;
 
 it('shows the journals the user has', function (): void {
@@ -50,6 +49,7 @@ it('lets an user access a journal', function (): void {
     $journal = Journal::factory()->create([
         'user_id' => $user->id,
     ]);
+
     $response = $this->actingAs($user)->get('/journals/' . $journal->slug);
     $response->assertStatus(200);
 });
@@ -60,5 +60,5 @@ it('does not let an user access a journal they are not a member of', function ()
 
     $response = $this->actingAs($user)->get('/journals/' . $journal->slug);
 
-    $response->assertStatus(403);
+    $response->assertStatus(404);
 });
