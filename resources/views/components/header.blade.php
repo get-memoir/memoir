@@ -57,7 +57,7 @@
     <!-- Mobile menu overlay -->
     <div x-cloak x-show="mobileMenuOpen" x-transition:enter="transition duration-50 ease-out" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition duration-50 ease-in" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 bg-white dark:bg-gray-900">
       <div class="flex h-full flex-col">
-        <!-- Mobile Menu Header -->
+        <!-- Mobile menu Header -->
         <div class="flex items-center justify-between border-b border-gray-200 px-2 py-1 dark:border-gray-700">
           <x-image src="logo/30x30" width="20" height="20" alt="Memoir logo" />
 
