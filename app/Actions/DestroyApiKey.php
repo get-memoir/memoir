@@ -34,7 +34,6 @@ final class DestroyApiKey
     private function log(): void
     {
         LogUserAction::dispatch(
-            organization: null,
             user: $this->user,
             action: 'api_key_deletion',
             description: 'Deleted an API key',

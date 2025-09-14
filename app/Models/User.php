@@ -74,15 +74,13 @@ final class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
-     * Get the organizations associated with the user.
+     * Get the journals associated with the user.
      *
-     * @return BelongsToMany<Organization, $this>
+     * @return HasMany<Journal, $this>
      */
-    public function organizations(): BelongsToMany
+    public function journals(): HasMany
     {
-        return $this->belongsToMany(Organization::class)
-            ->withPivot(['joined_at'])
-            ->withTimestamps();
+        return $this->hasMany(Journal::class);
     }
 
     /**
@@ -119,15 +117,5 @@ final class User extends Authenticatable implements MustVerifyEmail
         $separator = $firstName && $lastName ? ' ' : '';
 
         return $firstName . $separator . $lastName;
-    }
-
-    /**
-     * Check if the user is part of a specific organization.
-     *
-     * @return bool
-     */
-    public function isPartOfOrganization(Organization $organization): bool
-    {
-        return $this->organizations()->where('organization_id', $organization->id)->exists();
     }
 }

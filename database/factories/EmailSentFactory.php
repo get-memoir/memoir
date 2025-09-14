@@ -24,7 +24,6 @@ final class EmailSentFactory extends Factory
     public function definition(): array
     {
         return [
-            'organization_id' => Organization::factory(),
             'user_id' => User::factory(),
             'uuid' => $this->faker->uuid(),
             'email_type' => $this->faker->word(),

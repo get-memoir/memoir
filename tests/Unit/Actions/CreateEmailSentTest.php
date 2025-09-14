@@ -17,7 +17,6 @@ it('creates an email sent', function (): void {
 
     $emailSent = (new CreateEmailSent(
         user: $user,
-        organization: null,
         uuid: 'd27cee22-b10f-46c4-a7dc-af3b46820d80',
         emailType: 'birthday_wishes',
         emailAddress: 'dwight.schrute@dundermifflin.com',
@@ -27,7 +26,6 @@ it('creates an email sent', function (): void {
 
     $this->assertDatabaseHas('emails_sent', [
         'id' => $emailSent->id,
-        'organization_id' => null,
         'user_id' => $user->id,
         'uuid' => 'd27cee22-b10f-46c4-a7dc-af3b46820d80',
         'email_type' => 'birthday_wishes',
@@ -48,7 +46,6 @@ it('sanitizes the body and strips any links', function (): void {
 
     $emailSent = (new CreateEmailSent(
         user: $user,
-        organization: null,
         uuid: null,
         emailType: 'birthday_wishes',
         emailAddress: 'dwight.schrute@dundermifflin.com',
@@ -62,23 +59,6 @@ it('sanitizes the body and strips any links', function (): void {
     ]);
 });
 
-it('fails if user doesnt belong to organization', function (): void {
-    $this->expectException(ModelNotFoundException::class);
-
-    $user = User::factory()->create();
-    $organization = Organization::factory()->create();
-
-    (new CreateEmailSent(
-        user: $user,
-        organization: $organization,
-        uuid: null,
-        emailType: 'birthday_wishes',
-        emailAddress: 'monica.geller@friends.com',
-        subject: 'Happy Birthday!',
-        body: 'Hope you have a great day!',
-    ))->execute();
-});
-
 it('creates an email sent with a uuid', function (): void {
     Queue::fake();
 
@@ -87,7 +67,6 @@ it('creates an email sent with a uuid', function (): void {
 
     $emailSent = (new CreateEmailSent(
         user: $user,
-        organization: null,
         uuid: $uuid->toString(),
         emailType: 'birthday_wishes',
         emailAddress: 'dwight.schrute@dundermifflin.com',

@@ -15,7 +15,6 @@ it('shows all the logs', function (): void {
     ]);
 
     $log = Log::factory()->create([
-        'organization_id' => null,
         'user_id' => $user->id,
         'action' => 'profile_update',
         'description' => 'Updated their profile',
@@ -41,7 +40,6 @@ it('shows a pagination', function (): void {
     $user = User::factory()->create();
 
     Log::factory()->count(15)->create([
-        'organization_id' => null,
         'user_id' => $user->id,
     ]);
 

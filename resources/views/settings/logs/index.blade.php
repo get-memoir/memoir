@@ -10,7 +10,7 @@
   </x-slot>
 
   <x-breadcrumb :items="[
-    ['label' => __('Dashboard'), 'route' => route('organizations.index')],
+    ['label' => __('Dashboard'), 'route' => route('journal.index')],
     ['label' => __('Settings'), 'route' => route('settings.profile.index')],
     ['label' => __('Logs')]
   ]" />
@@ -31,13 +31,6 @@
                 <x-phosphor-pulse class="size-3 min-w-3 text-zinc-600 dark:text-zinc-400" />
                 <div class="flex flex-col gap-y-2">
                   <p class="flex items-center gap-2">
-                    <span class="">{{ $log->getUserName() }}</span>
-                    |
-                    @if ($log->organization)
-                      <x-link href="{{ route('organizations.show', $log->organization->id) }}">{{ $log->organization->name }}</x-link>
-                      |
-                    @endif
-
                     <span class="font-mono text-xs">{{ $log->action }}</span>
                   </p>
                   <p class="">{{ $log->description }}</p>

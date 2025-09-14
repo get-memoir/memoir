@@ -24,7 +24,6 @@ final class LogResource extends JsonResource
             'type' => 'log',
             'id' => (string) $this->id,
             'attributes' => [
-                'user_name' => $this->user_name,
                 'action' => $this->action,
                 'description' => $this->description,
                 'created_at' => $this->created_at->timestamp,

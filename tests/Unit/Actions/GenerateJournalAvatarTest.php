@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use App\Actions\GenerateOrganizationAvatar;
+use App\Actions\GenerateJournalAvatar;
 
 it('generates a base64 encoded SVG avatar', function (): void {
-    $result = new GenerateOrganizationAvatar(
+    $result = new GenerateJournalAvatar(
         seed: 'test-seed',
     )->execute();
 

@@ -3,20 +3,20 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\LocaleController;
-use App\Http\Controllers\Organizations;
+use App\Http\Controllers\Journal;
 use App\Http\Controllers\Settings;
 use Illuminate\Support\Facades\Route;
 
 Route::put('/locale', [LocaleController::class, 'update'])->name('locale.update');
 
 Route::middleware(['auth', 'verified', 'throttle:60,1', 'set.locale'])->group(function (): void {
-    Route::get('organizations', [Organizations\OrganizationController::class, 'index'])->name('organizations.index');
-    Route::get('organizations/create', [Organizations\OrganizationController::class, 'create'])->name('organizations.create');
-    Route::post('organizations', [Organizations\OrganizationController::class, 'store'])->name('organizations.store');
+    Route::get('journals', [Journal\JournalController::class, 'index'])->name('journal.index');
+    Route::get('journals/create', [Journal\JournalController::class, 'create'])->name('journal.create');
+    Route::post('journals', [Journal\JournalController::class, 'store'])->name('journal.store');
 
-    // organization
-    Route::middleware(['organization'])->group(function (): void {
-        Route::get('organizations/{slug}', [Organizations\OrganizationController::class, 'show'])->name('organizations.show');
+    // journal
+    Route::middleware(['journal'])->group(function (): void {
+        Route::get('journals/{slug}', [Journal\JournalController::class, 'show'])->name('journal.show');
     });
 
     // settings redirect

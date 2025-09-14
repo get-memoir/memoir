@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Actions\CreateAccount;
+use App\Actions\CreateJournal;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use App\Actions\CreateOrganization;
@@ -18,12 +19,12 @@ final class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->createDunderMifflin();
+        $this->create();
         $this->validateEmail();
-        $this->addOrganization();
+        $this->addJournal();
     }
 
-    private function createDunderMifflin(): void
+    private function create(): void
     {
         $this->michael = new CreateAccount(
             email: 'michael.scott@dundermifflin.com',
@@ -39,11 +40,11 @@ final class DatabaseSeeder extends Seeder
         $this->michael->save();
     }
 
-    private function addOrganization(): void
+    private function addJournal(): void
     {
-        new CreateOrganization(
+        new CreateJournal(
             user: $this->michael,
-            organizationName: 'Dunder Mifflin',
+            name: 'Dunder Mifflin',
         )->execute();
     }
 }

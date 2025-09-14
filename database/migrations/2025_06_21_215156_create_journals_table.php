@@ -12,11 +12,13 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('organizations', function (Blueprint $table): void {
+        Schema::create('journals', function (Blueprint $table): void {
             $table->id();
-            $table->string('name')->unique();
+            $table->unsignedBigInteger('user_id');
+            $table->string('name');
             $table->string('slug')->unique()->nullable()->index();
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('organizations');
+        Schema::dropIfExists('journals');
     }
 };

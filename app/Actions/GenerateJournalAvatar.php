@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Actions;
 
 /**
- * Generate an organization avatar.
+ * Generate a journal avatar.
  */
-final class GenerateOrganizationAvatar
+final class GenerateJournalAvatar
 {
     public function __construct(
         public string $seed,

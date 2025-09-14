@@ -4,17 +4,18 @@ declare(strict_types=1);
 
 namespace Database\Factories;
 
+use App\Models\Journal;
 use App\Models\Log;
 use App\Models\Organization;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Log>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Journal>
  */
-final class LogFactory extends Factory
+final class JournalFactory extends Factory
 {
-    protected $model = Log::class;
+    protected $model = Journal::class;
 
     /**
      * Define the model's default state.
@@ -25,8 +26,8 @@ final class LogFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'action' => fake()->word(),
-            'description' => fake()->sentence(),
+            'name' => fake()->word(),
+            'slug' => fake()->slug(),
         ];
     }
 }

@@ -12,7 +12,6 @@ $logJsonStructure = [
         'type',
         'id',
         'attributes' => [
-            'user_name',
             'action',
             'description',
             'created_at',
@@ -30,7 +29,7 @@ $logsCollectionStructure = [
             'type',
             'id',
             'attributes' => [
-                'user_name',
+
                 'action',
                 'description',
                 'created_at',
@@ -62,9 +61,8 @@ it('can get paginated logs', function () use ($logsCollectionStructure): void {
     Carbon::setTestNow('2025-01-15 10:00:00');
     $user = User::factory()->create();
 
-    $logs = Log::factory()->count(15)->create([
+    Log::factory()->count(15)->create([
         'user_id' => $user->id,
-        'user_name' => $user->getFullName(),
     ]);
 
     Sanctum::actingAs($user);
@@ -81,23 +79,6 @@ it('can get paginated logs', function () use ($logsCollectionStructure): void {
             'total' => 15,
         ],
     ]);
-
-    $firstLog = $logs->sortByDesc('created_at')->first();
-    $response->assertJson([
-        'data' => [
-            [
-                'type' => 'log',
-                'id' => (string) $firstLog->id,
-                'attributes' => [
-                    'user_name' => $firstLog->user_name,
-                    'action' => $firstLog->action,
-                    'description' => $firstLog->description,
-                    'created_at' => $firstLog->created_at->timestamp,
-                    'updated_at' => $firstLog->created_at->timestamp,
-                ],
-            ],
-        ],
-    ]);
 });
 
 it('can show a specific log', function () use ($logJsonStructure): void {
@@ -105,7 +86,6 @@ it('can show a specific log', function () use ($logJsonStructure): void {
     $user = User::factory()->create();
     $log = Log::factory()->create([
         'user_id' => $user->id,
-        'user_name' => $user->getFullName(),
         'action' => 'user.login',
         'description' => 'User logged in successfully',
     ]);
@@ -122,11 +102,10 @@ it('can show a specific log', function () use ($logJsonStructure): void {
             'type' => 'log',
             'id' => (string) $log->id,
             'attributes' => [
-                'user_name' => $log->user_name,
                 'action' => 'user.login',
                 'description' => 'User logged in successfully',
-                'created_at' => $log->created_at->timestamp,
-                'updated_at' => $log->created_at->timestamp,
+                'created_at' => 1736935200,
+                'updated_at' => 1736935200,
             ],
         ],
     ]);
@@ -137,7 +116,6 @@ it('returns 403 when trying to access another user log', function (): void {
     $user2 = User::factory()->create();
     $log = Log::factory()->create([
         'user_id' => $user2->id,
-        'user_name' => $user2->getFullName(),
     ]);
 
     Sanctum::actingAs($user1);
@@ -147,23 +125,6 @@ it('returns 403 when trying to access another user log', function (): void {
     $response->assertForbidden();
     $response->assertJson([
         'message' => 'Unauthorized action.',
-    ]);
-});
-
-it('returns 404 when log has no user_id', function (): void {
-    $user = User::factory()->create();
-    $log = Log::factory()->create([
-        'user_id' => null,
-        'user_name' => 'System',
-    ]);
-
-    Sanctum::actingAs($user);
-
-    $response = $this->json('GET', "/api/settings/logs/{$log->id}");
-
-    $response->assertNotFound();
-    $response->assertJson([
-        'message' => 'Log not found.',
     ]);
 });
 

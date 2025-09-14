@@ -3,24 +3,17 @@
 declare(strict_types=1);
 
 use App\Models\EmailSent;
+use App\Models\Journal;
 use App\Models\User;
 use App\Models\Organization;
 
-it('belongs to many organizations', function (): void {
+it('has many journals', function (): void {
     $user = User::factory()->create();
-    $organization1 = Organization::factory()->create();
-    $organization2 = Organization::factory()->create();
-
-    $user->organizations()->attach($organization1->id, [
-        'joined_at' => now(),
-    ]);
-    $user->organizations()->attach($organization2->id, [
-        'joined_at' => now(),
+    Journal::factory()->count(2)->create([
+        'user_id' => $user->id,
     ]);
 
-    expect($user->organizations)->toHaveCount(2);
-    expect($user->organizations->contains($organization1))->toBeTrue();
-    expect($user->organizations->contains($organization2))->toBeTrue();
+    expect($user->journals)->toHaveCount(2);
 });
 
 it('has many emails sent', function (): void {
@@ -53,16 +46,4 @@ it('has initials', function (): void {
     ]);
 
     expect($dwight->initials())->toEqual('DS');
-});
-
-it('checks organization membership', function (): void {
-    $user = User::factory()->create();
-    $organization = Organization::factory()->create();
-
-    expect($user->isPartOfOrganization($organization))->toBeFalse();
-
-    $user->organizations()->attach($organization->id, [
-        'joined_at' => now(),
-    ]);
-    expect($user->isPartOfOrganization($organization))->toBeTrue();
 });
