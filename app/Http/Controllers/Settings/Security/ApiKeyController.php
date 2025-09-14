@@ -22,12 +22,12 @@ final class ApiKeyController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'label' => 'required|string|min:3|max:255',
+            'key' => 'required|string|min:3|max:255',
         ]);
 
         $apiKey = new CreateApiKey(
             user: Auth::user(),
-            label: $validated['label'],
+            label: $validated['key'],
         )->execute();
 
         return redirect()->route('settings.security.index')
@@ -35,9 +35,10 @@ final class ApiKeyController extends Controller
             ->with('status', trans('API key created'));
     }
 
-    public function destroy(Request $request, int $apiKeyId): RedirectResponse
+    public function destroy(Request $request): RedirectResponse
     {
-        $apiKey = Auth::user()->tokens()->where('id', $apiKeyId)->first();
+        $id = $request->route()->parameter('apiKey');
+        $apiKey = Auth::user()->tokens()->where('id', $id)->first();
 
         new DestroyApiKey(
             user: Auth::user(),

@@ -60,7 +60,7 @@ final class ApiKeyController extends Controller
 
     public function destroy(Request $request): Response|JsonResponse
     {
-        $id = (int) $request->route()->parameter('id');
+        $id = (int) $request->route()->parameter('apiKeyId');
 
         if ($id === 0) {
             return $this->error('API key not found', 404);

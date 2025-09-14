@@ -13,7 +13,6 @@ on:
 
 env:
   default-php-version: '8.4'
-  coverage-with: sqlite
   PLAYWRIGHT_BROWSERS_PATH: $HOME/.cache/ms-playwright
 
 concurrency:
@@ -164,8 +163,7 @@ jobs:
 
       - name: Run tests
         if: matrix.connection == 'sqlite'
-        run: vendor/bin/pest --ci --coverage-clover=coverage.xml --parallel
-        continue-on-error: true
+        run: vendor/bin/pest --ci --parallel
         env:
           DB_CONNECTION: ${{ matrix.connection }}
 
@@ -180,10 +178,3 @@ jobs:
         run: vendor/bin/pest --ci
         env:
           DB_CONNECTION: ${{ matrix.connection }}
-
-      - name: Upload coverage reports to Codecov
-        if: matrix.connection == 'sqlite'
-        uses: codecov/codecov-action@v5
-        with:
-          fail_ci_if_error: true
-          token: ${{ secrets.CODECOV_TOKEN }}

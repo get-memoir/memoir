@@ -6,4 +6,4 @@
 
 <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml" />
 
-<meta name="description" content="{{ config('async.description') }}" />
+<meta name="description" content="{{ config('memoir.description') }}" />

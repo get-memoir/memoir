@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Mail;
 use Resend\Laravel\Facades\Resend;
 
 it('sends email the traditional way', function (): void {
-    Config::set('async.use_resend', false);
+    Config::set('memoir.use_resend', false);
     Config::set('mail.from.address', 'noreply@example.com');
     Mail::fake();
 
@@ -40,7 +40,7 @@ it('sends email the traditional way', function (): void {
 });
 
 it('sends email with resend facade', function (): void {
-    Config::set('async.use_resend', true);
+    Config::set('memoir.use_resend', true);
     Config::set('mail.from.address', 'noreply@example.com');
 
     $resendMock = Mockery::mock();

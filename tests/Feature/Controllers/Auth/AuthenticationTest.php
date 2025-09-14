@@ -11,7 +11,7 @@ test('login screen can be rendered', function (): void {
 });
 
 test('users can authenticate using the login screen', function (): void {
-    $user = User::factory()->create([
+    User::factory()->create([
         'email' => 'michael.scott@dundermifflin.com',
         'password' => Illuminate\Support\Facades\Hash::make('5UTHSmdj'),
     ]);

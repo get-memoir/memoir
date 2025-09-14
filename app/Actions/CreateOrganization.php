@@ -29,7 +29,6 @@ final class CreateOrganization
         $this->create();
         $this->generateSlug();
         $this->addFirstUser();
-        $this->addPermissions();
         $this->log();
 
         return $this->organization;
@@ -65,14 +64,6 @@ final class CreateOrganization
         $this->user->organizations()->attach($this->organization->id, [
             'joined_at' => now(),
         ]);
-    }
-
-    private function addPermissions(): void
-    {
-        new PopulateDefaultPermissionsInOrganization(
-            organization: $this->organization,
-            user: $this->user,
-        )->execute();
     }
 
     private function log(): void
