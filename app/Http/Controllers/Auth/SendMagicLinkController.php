@@ -37,6 +37,8 @@ final class SendMagicLinkController extends Controller
                 parameters: ['link' => $link],
             )->onQueue('high');
         } catch (ModelNotFoundException) {
+            // Do nothing. We don't want to reveal whether the email exists or not.
+            return view('auth.magic-link-sent');
         }
 
         return view('auth.magic-link-sent');

@@ -4,7 +4,7 @@
   "changelog-path": "CHANGELOG.md",
   "packages": {
     ".": {
-      "package-name": "get-async/async",
+      "package-name": "get-memoir/memoir",
       "version-file": "composer.json",
       "changelog-path": "CHANGELOG.md",
       "bootstrap-sha": ""

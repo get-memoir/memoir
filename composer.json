@@ -1,8 +1,8 @@
 {
   "$schema": "https://getcomposer.org/schema.json",
-  "name": "get-async/async",
+  "name": "get-memoir/memoir",
   "type": "project",
-  "description": "Open-source tool for small, async-first developer teams",
+  "description": "Serious journaling for serious minds",
   "keywords": [
     "laravel",
     "framework",
@@ -76,33 +76,33 @@
       "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
     ],
     "test": [
-      "@async:unit",
-      "@async:setup",
-      "@async:locale",
-      "@async:lint"
+      "@memoir:unit",
+      "@memoir:setup",
+      "@memoir:locale",
+      "@memoir:lint"
     ],
     "precommit": [
-      "@async:rector",
+      "@memoir:rector",
       "@test",
-      "@async:static",
-      "@async:update-blacklist-domains",
-      "@async:prettier",
-      "@async:update",
-      "@async:locale",
-      "@async:lint",
-      "@async:type-coverage",
-      "@async:setup"
+      "@memoir:static",
+      "@memoir:update-blacklist-domains",
+      "@memoir:prettier",
+      "@memoir:update",
+      "@memoir:locale",
+      "@memoir:lint",
+      "@memoir:type-coverage",
+      "@memoir:setup"
     ],
-    "async:lint": "./vendor/bin/pint",
-    "async:locale": "php artisan localize en,fr --remove-missing",
-    "async:prettier": "npx prettier --write resources/",
-    "async:rector": "./vendor/bin/rector",
-    "async:setup": "php artisan migrate:fresh && php artisan db:seed",
-    "async:static": "./vendor/bin/phpstan analyse --memory-limit=256M",
-    "async:type-coverage": "./vendor/bin/pest --type-coverage --min=100",
-    "async:update": "composer update && bun update",
-    "async:update-blacklist-domains": "php artisan erag:sync-disposable-email-list",
-    "async:unit": "rm -f database/test.sqlite_test* && php artisan migrate:fresh --database=testing && ./vendor/bin/pest --parallel --processes=10"
+    "memoir:lint": "./vendor/bin/pint",
+    "memoir:locale": "php artisan localize en,fr --remove-missing",
+    "memoir:prettier": "npx prettier --write resources/",
+    "memoir:rector": "./vendor/bin/rector",
+    "memoir:setup": "php artisan migrate:fresh && php artisan db:seed",
+    "memoir:static": "./vendor/bin/phpstan analyse --memory-limit=256M",
+    "memoir:type-coverage": "./vendor/bin/pest --type-coverage --min=100",
+    "memoir:update": "composer update && bun update",
+    "memoir:update-blacklist-domains": "php artisan erag:sync-disposable-email-list",
+    "memoir:unit": "rm -f database/test.sqlite_test* && php artisan migrate:fresh --database=testing && ./vendor/bin/pest --parallel --processes=10"
   },
   "extra": {
     "laravel": {

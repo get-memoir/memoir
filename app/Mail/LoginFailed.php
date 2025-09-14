@@ -16,8 +16,6 @@ final class LoginFailed extends Mailable implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
-    public function __construct() {}
-
     public function envelope(): Envelope
     {
         return new Envelope(

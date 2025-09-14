@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-if (! function_exists('trans_key')) {
+if (! function_exists('translate_key')) {
     /**
-     * Extract the message.
+     * Extract the given key from the current file so it can be translated.
      */
-    function trans_key(?string $key = null): ?string
+    function translate_key(?string $key = null): ?string
     {
         return $key;
     }

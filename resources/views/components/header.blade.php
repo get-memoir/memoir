@@ -1,8 +1,8 @@
 <header {{ $attributes->class(['flex w-full max-w-[1920px] items-center px-2 sm:pr-4 sm:pl-9']) }}>
   <!-- normal desktop header -->
-  <nav class="hidden flex-1 items-center gap-3 pt-2 pb-2 sm:flex">
+  <nav class="hidden flex-1 items-center gap-3 pt-2 pb-2 sm:flex" aria-label="Global">
     <a href="/" class="flex items-center">
-      <x-logo width="20" height="20" />
+      <x-image src="logo/30x30" width="20" height="20" alt="Memoir logo" />
     </a>
 
     <a class="rounded-md border border-transparent px-2 py-1 font-medium hover:border-gray-200 hover:bg-gray-100" href="/">{{ __('Dashboard') }}</a>
@@ -45,28 +45,28 @@
   </nav>
 
   <!-- mobile header -->
-  <nav class="flex w-full items-center justify-between gap-3 pt-2 pb-2 sm:hidden" x-data="{ mobileMenuOpen: false }">
+  <nav class="flex w-full items-center justify-between gap-3 pt-2 pb-2 sm:hidden" x-data="{ mobileMenuOpen: false }" aria-label="Global">
     <a href="/">
-      <x-logo width="20" height="20" />
+      <x-image src="logo/30x30" width="20" height="20" alt="Memoir logo" />
     </a>
 
     <button @click="mobileMenuOpen = true" class="flex items-center gap-2 rounded-md border border-transparent py-1 font-medium hover:border-gray-200 hover:bg-gray-100">
       <x-phosphor-list class="size-5 text-gray-600 transition-transform duration-150" />
     </button>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile menu overlay -->
     <div x-cloak x-show="mobileMenuOpen" x-transition:enter="transition duration-50 ease-out" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition duration-50 ease-in" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 bg-white dark:bg-gray-900">
       <div class="flex h-full flex-col">
-        <!-- Mobile Menu Header -->
+        <!-- Mobile menu Header -->
         <div class="flex items-center justify-between border-b border-gray-200 px-2 py-1 dark:border-gray-700">
-          <x-logo width="20" height="20" />
+          <x-image src="logo/30x30" width="20" height="20" alt="Memoir logo" />
 
           <button @click="mobileMenuOpen = false" class="flex items-center gap-2 rounded-md border border-transparent py-2 font-medium hover:border-gray-200 hover:bg-gray-100 dark:hover:border-gray-600 dark:hover:bg-gray-800">
             <x-phosphor-x class="size-5 text-gray-600 dark:text-gray-400" />
           </button>
         </div>
 
-        <!-- Mobile Menu Content -->
+        <!-- Mobile menu content -->
         <div class="flex-1 space-y-4 p-4">
           <a @click="mobileMenuOpen = false" href="/" class="flex items-center gap-3 rounded-md p-3 text-lg font-medium text-gray-800 transition-colors hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800">
             {{ __('Dashboard') }}

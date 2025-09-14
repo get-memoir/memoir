@@ -34,9 +34,6 @@ it('gets the latest logs', function (): void {
         'last_name' => 'Scott',
         'nickname' => null,
     ]);
-    $organization = Organization::factory()->create([
-        'name' => 'Dunder Mifflin',
-    ]);
 
     Log::factory()->create([
         'user_id' => $user->id,

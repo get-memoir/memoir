@@ -14,7 +14,7 @@ it('creates an API key', function (): void {
     // create
     $page = visit('/settings/security');
     $page->press('@new-api-key-button');
-    $page->type('label', 'test1');
+    $page->type('key', 'test1');
     $page->press('@create-api-key-button');
     $page->waitForText('API key created');
     $page->assertSee('API key created');
