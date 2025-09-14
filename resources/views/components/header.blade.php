@@ -54,7 +54,7 @@
       <x-phosphor-list class="size-5 text-gray-600 transition-transform duration-150" />
     </button>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile menu overlay -->
     <div x-cloak x-show="mobileMenuOpen" x-transition:enter="transition duration-50 ease-out" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition duration-50 ease-in" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 bg-white dark:bg-gray-900">
       <div class="flex h-full flex-col">
         <!-- Mobile Menu Header -->
