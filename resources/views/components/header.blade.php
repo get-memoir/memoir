@@ -66,7 +66,7 @@
           </button>
         </div>
 
-        <!-- Mobile Menu Content -->
+        <!-- Mobile menu content -->
         <div class="flex-1 space-y-4 p-4">
           <a @click="mobileMenuOpen = false" href="/" class="flex items-center gap-3 rounded-md p-3 text-lg font-medium text-gray-800 transition-colors hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800">
             {{ __('Dashboard') }}
