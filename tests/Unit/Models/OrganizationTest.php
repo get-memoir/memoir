@@ -3,11 +3,7 @@
 declare(strict_types=1);
 
 use App\Models\EmailSent;
-use App\Models\Group;
-use App\Models\JobDiscipline;
-use App\Models\JobFamily;
 use App\Models\Organization;
-use App\Models\Role;
 use App\Models\User;
 
 it('belongs to many users', function (): void {

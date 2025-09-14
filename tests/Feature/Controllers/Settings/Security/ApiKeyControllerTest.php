@@ -10,7 +10,7 @@ it('it can create a new api token', function (): void {
     $response = $this->actingAs($user)
         ->from('/settings/security/create')
         ->post('/settings/api-keys', [
-            'label' => 'My API Token',
+            'key' => 'My API Token',
         ]);
 
     $response->assertRedirect('/settings/security');

@@ -41,6 +41,6 @@ Route::name('api.')->group(function (): void {
         Route::get('settings/api', [Settings\Security\ApiKeyController::class, 'index'])->name('settings.api');
         Route::get('settings/api/{id}', [Settings\Security\ApiKeyController::class, 'show'])->name('settings.api.show');
         Route::post('settings/api', [Settings\Security\ApiKeyController::class, 'create'])->name('settings.api.create');
-        Route::delete('settings/api/{id}', [Settings\Security\ApiKeyController::class, 'destroy'])->name('settings.api.destroy');
+        Route::delete('settings/api/{apiKeyId}', [Settings\Security\ApiKeyController::class, 'destroy'])->name('settings.api.destroy');
     });
 });
