@@ -35,9 +35,10 @@ final class ApiKeyController extends Controller
             ->with('status', trans('API key created'));
     }
 
-    public function destroy(Request $request, int $apiKeyId): RedirectResponse
+    public function destroy(Request $request): RedirectResponse
     {
-        $apiKey = Auth::user()->tokens()->where('id', $apiKeyId)->first();
+        $id = $request->route()->parameter('id');
+        $apiKey = Auth::user()->tokens()->where('id', $id)->first();
 
         new DestroyApiKey(
             user: Auth::user(),

@@ -62,23 +62,23 @@ return [
 
     'permissions' => [
         [
-            'name' => trans_key('Manage organizations settings'),
-            'description' => trans_key('Allows managing organization settings such as name, description, and other details.'),
+            'name' => translate_key('Manage organizations settings'),
+            'description' => translate_key('Allows managing organization settings such as name, description, and other details.'),
             'permissions' => [
                 [
                     'key' => 'organization.edit',
-                    'name' => trans_key('Edit organization'),
-                    'description' => trans_key('Allows editing organization details such as name and settings, but not billing.'),
+                    'name' => translate_key('Edit organization'),
+                    'description' => translate_key('Allows editing organization details such as name and settings, but not billing.'),
                 ],
                 [
                     'key' => 'organization.delete',
-                    'name' => trans_key('Delete organization'),
-                    'description' => trans_key('Allows deleting the organization.'),
+                    'name' => translate_key('Delete organization'),
+                    'description' => translate_key('Allows deleting the organization.'),
                 ],
                 [
                     'key' => 'organization.permission.manage',
-                    'name' => trans_key('Manage permissions, roles and groups'),
-                    'description' => trans_key('Allows managing permissions, roles and groups within the organization.'),
+                    'name' => translate_key('Manage permissions, roles and groups'),
+                    'description' => translate_key('Allows managing permissions, roles and groups within the organization.'),
                 ],
             ],
         ],

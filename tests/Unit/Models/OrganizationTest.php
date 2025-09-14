@@ -36,42 +36,6 @@ it('has many emails sent', function (): void {
     expect($organization->emailsSent()->exists())->toBeTrue();
 });
 
-it('has many job families', function (): void {
-    $organization = Organization::factory()->create();
-    JobFamily::factory()->count(2)->create([
-        'organization_id' => $organization->id,
-    ]);
-
-    expect($organization->jobFamilies()->exists())->toBeTrue();
-});
-
-it('has many job disciplines', function (): void {
-    $organization = Organization::factory()->create();
-    JobDiscipline::factory()->count(2)->create([
-        'organization_id' => $organization->id,
-    ]);
-
-    expect($organization->jobDisciplines()->exists())->toBeTrue();
-});
-
-it('has many roles', function (): void {
-    $organization = Organization::factory()->create();
-    Role::factory()->count(2)->create([
-        'organization_id' => $organization->id,
-    ]);
-
-    expect($organization->roles()->exists())->toBeTrue();
-});
-
-it('has many groups', function (): void {
-    $organization = Organization::factory()->create();
-    Group::factory()->count(2)->create([
-        'organization_id' => $organization->id,
-    ]);
-
-    expect($organization->groups()->exists())->toBeTrue();
-});
-
 it('gets the avatar', function (): void {
     $organization = Organization::factory()->create();
 

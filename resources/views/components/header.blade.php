@@ -1,6 +1,6 @@
 <header {{ $attributes->class(['flex w-full max-w-[1920px] items-center px-2 sm:pr-4 sm:pl-9']) }}>
   <!-- normal desktop header -->
-  <nav class="hidden flex-1 items-center gap-3 pt-2 pb-2 sm:flex">
+  <nav class="hidden flex-1 items-center gap-3 pt-2 pb-2 sm:flex" aria-label="Global">
     <a href="/" class="flex items-center">
       <x-logo width="20" height="20" />
     </a>
@@ -45,7 +45,7 @@
   </nav>
 
   <!-- mobile header -->
-  <nav class="flex w-full items-center justify-between gap-3 pt-2 pb-2 sm:hidden" x-data="{ mobileMenuOpen: false }">
+  <nav class="flex w-full items-center justify-between gap-3 pt-2 pb-2 sm:hidden" x-data="{ mobileMenuOpen: false }" aria-label="Global">
     <a href="/">
       <x-logo width="20" height="20" />
     </a>

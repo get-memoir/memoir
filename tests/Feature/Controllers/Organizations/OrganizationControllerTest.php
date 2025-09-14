@@ -35,7 +35,7 @@ it('creates an organization', function (): void {
         'password' => Illuminate\Support\Facades\Hash::make('5UTHSmdj'),
     ]);
 
-    $response = $this->actingAs($user)->get('/organizations/create');
+    $this->actingAs($user)->get('/organizations/create');
 
     $response = $this->post('/organizations', [
         'organization_name' => 'Dunder Mifflin',
