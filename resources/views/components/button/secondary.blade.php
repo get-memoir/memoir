@@ -1,5 +1,6 @@
 @props([
   'href',
+  'enableTurbo' => false,
 ])
 
 @php
@@ -9,7 +10,7 @@
 @endphp
 
 @isset($href)
-  <a href="{{ $href }}" {{ $attributes->merge(['class' => $classes]) }}>
+  <a href="{{ $href }}" {{ $attributes->merge(['class' => $classes]) }} @if ($enableTurbo) data-turbo="true" @endif>
     @isset($icon)
       <span class="shrink-0">{{ $icon }}</span>
     @endisset
