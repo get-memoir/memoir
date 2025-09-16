@@ -14,7 +14,6 @@ final class MarketingTermsController extends Controller
     {
         return view('marketing.terms', [
             'marketingPage' => MarketingPage::first(),
-            'viewName' => 'marketing.terms',
         ]);
     }
 }

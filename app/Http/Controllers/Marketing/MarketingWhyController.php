@@ -16,7 +16,6 @@ final class MarketingWhyController extends Controller
 
         return view('marketing.why.index', [
             'marketingPage' => $marketingPage,
-            'viewName' => 'marketing.why.index',
         ]);
     }
 }

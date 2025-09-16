@@ -41,4 +41,31 @@ final class MarketingDocsController extends Controller
             'marketingPage' => $marketingPage,
         ]);
     }
+
+    public function profile(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+
+        return view('marketing.docs.api.account.profile', [
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function logs(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+
+        return view('marketing.docs.api.account.logs', [
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function apiManagement(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+
+        return view('marketing.docs.api.account.api-management', [
+            'marketingPage' => $marketingPage,
+        ]);
+    }
 }

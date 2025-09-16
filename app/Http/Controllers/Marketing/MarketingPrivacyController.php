@@ -14,7 +14,6 @@ final class MarketingPrivacyController extends Controller
     {
         return view('marketing.privacy', [
             'marketingPage' => $request->attributes->get('marketingPage'),
-            'viewName' => 'marketing.privacy',
         ]);
     }
 }

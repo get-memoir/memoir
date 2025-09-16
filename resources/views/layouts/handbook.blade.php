@@ -54,7 +54,7 @@
 
           <div @click="generalInformation = !generalInformation" class="mb-2 flex cursor-pointer items-center justify-between rounded-md border border-transparent px-2 py-1 hover:border-gray-200 hover:bg-blue-50">
             <h3>General information</h3>
-            <x-lucide-chevron-right x-bind:class="generalInformation ? 'rotate-90' : ''" class="h-4 w-4 text-gray-500 transition-transform duration-300" />
+            <x-phosphor-caret-right x-bind:class="generalInformation ? 'rotate-90' : ''" class="h-4 w-4 text-gray-500 transition-transform duration-300" />
           </div>
 
           <div x-cloak x-show="generalInformation" class="mb-4 ml-3">
@@ -82,7 +82,7 @@
 
           <div @click="marketing = !marketing" class="mb-2 flex cursor-pointer items-center justify-between rounded-md border border-transparent px-2 py-1 hover:border-gray-200 hover:bg-blue-50">
             <h3>Marketing</h3>
-            <x-lucide-chevron-right x-bind:class="marketing ? 'rotate-90' : ''" class="h-4 w-4 text-gray-500 transition-transform duration-300" />
+            <x-phosphor-caret-right x-bind:class="marketing ? 'rotate-90' : ''" class="h-4 w-4 text-gray-500 transition-transform duration-300" />
           </div>
 
           <div x-cloak x-show="marketing" class="mb-4 ml-3">
