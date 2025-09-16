@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Models\EmailSent;
 use App\Models\Journal;
+use App\Models\MarketingPage;
 use App\Models\User;
 
 it('has many journals', function (): void {
@@ -22,6 +23,14 @@ it('has many emails sent', function (): void {
     ]);
 
     expect($user->emailsSent()->exists())->toBeTrue();
+});
+
+it('has many marketing pages', function (): void {
+    $user = User::factory()->create();
+    $marketingPage = MarketingPage::factory()->create();
+    $marketingPage->users()->attach($user);
+
+    expect($user->marketingPages()->exists())->toBeTrue();
 });
 
 it('gets the name', function (): void {

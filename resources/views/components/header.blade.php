@@ -1,7 +1,7 @@
 <header {{ $attributes->class(['flex w-full max-w-[1920px] items-center px-2 sm:pr-4 sm:pl-9']) }}>
   <!-- normal desktop header -->
   <nav class="hidden flex-1 items-center gap-3 pt-2 pb-2 sm:flex" aria-label="Global">
-    <a href="/" class="flex items-center">
+    <a href="{{ route('marketing.index') }}" class="flex items-center">
       <x-image src="logo/30x30" width="20" height="20" alt="Memoir logo" />
     </a>
 

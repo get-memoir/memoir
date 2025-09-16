@@ -8,6 +8,7 @@ use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\SetLocale;
 use App\Http\Middleware\CheckJournal;
 use App\Http\Middleware\CheckJournalAPI;
+use App\Http\Middleware\CheckMarketingPage;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -21,6 +22,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'set.locale' => SetLocale::class,
             'journal' => CheckJournal::class,
             'journal.api' => CheckJournalAPI::class,
+            'marketing.page' => CheckMarketingPage::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

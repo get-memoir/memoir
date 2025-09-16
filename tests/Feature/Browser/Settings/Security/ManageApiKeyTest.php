@@ -11,13 +11,13 @@ it('creates an API key', function (): void {
 
     $this->actingAs($user);
 
-    // create
     $page = visit('/settings/security');
     $page->press('@new-api-key-button');
+    $page->wait(1);
     $page->type('key', 'test1');
     $page->press('@create-api-key-button');
-    $page->waitForText('API key created');
-    $page->assertSee('API key created');
+    $page->waitForText('1|');
+    $page->assertSee('1|');
 });
 
 it('deletes an API key', function (): void {

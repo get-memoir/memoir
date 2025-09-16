@@ -1,0 +1,148 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Http\Controllers\Marketing;
+
+use App\Helpers\MarketingHelper;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+/**
+ * This controller is used to handle the marketing handbook pages.
+ * It should be one of the only controllers that does not follow the naming convention
+ * for methods in a controller.
+ */
+final class MarketingHandbookController extends Controller
+{
+    public function index(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+
+        return view('marketing.company.handbook.index', [
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function project(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+        $stats = MarketingHelper::getStats('marketing.company.handbook.project');
+
+        return view('marketing.company.handbook.project', [
+            'stats' => $stats,
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function principles(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+        $stats = MarketingHelper::getStats('marketing.company.handbook.principles');
+
+        return view('marketing.company.handbook.principles', [
+            'stats' => $stats,
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function shipping(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+        $stats = MarketingHelper::getStats('marketing.company.handbook.shipping');
+
+        return view('marketing.company.handbook.shipping', [
+            'stats' => $stats,
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function money(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+        $stats = MarketingHelper::getStats('marketing.company.handbook.money');
+
+        return view('marketing.company.handbook.money', [
+            'stats' => $stats,
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function why(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+        $stats = MarketingHelper::getStats('marketing.company.handbook.why-open-source');
+
+        return view('marketing.company.handbook.why-open-source', [
+            'stats' => $stats,
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function where(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+        $stats = MarketingHelper::getStats('marketing.company.handbook.where');
+
+        return view('marketing.company.handbook.where', [
+            'stats' => $stats,
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function marketing(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+        $stats = MarketingHelper::getStats('marketing.company.handbook.marketing');
+
+        return view('marketing.company.handbook.marketing', [
+            'stats' => $stats,
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function socialMedia(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+        $stats = MarketingHelper::getStats('marketing.company.handbook.social-media');
+
+        return view('marketing.company.handbook.social-media', [
+            'stats' => $stats,
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function writing(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+        $stats = MarketingHelper::getStats('marketing.company.handbook.writing');
+
+        return view('marketing.company.handbook.writing', [
+            'stats' => $stats,
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function philosophy(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+        $stats = MarketingHelper::getStats('marketing.company.handbook.product-philosophy');
+
+        return view('marketing.company.handbook.product-philosophy', [
+            'stats' => $stats,
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+
+    public function prioritize(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+        $stats = MarketingHelper::getStats('marketing.company.handbook.prioritize');
+
+        return view('marketing.company.handbook.prioritize', [
+            'stats' => $stats,
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+}

@@ -1,0 +1,42 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Http\Controllers\Marketing;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Actions\FetchMergedPRs;
+use App\Actions\FetchStars;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\View\View;
+
+final class MarketingController extends Controller
+{
+    public function index(Request $request): View
+    {
+        $marketingPage = $request->attributes->get('marketingPage');
+
+        $accountNumbers = User::where('created_at', '>=', now()->subWeek())->count();
+
+        $pullRequests = Cache::remember(
+            key: 'github_pull_requests',
+            ttl: now()->addHours(24),
+            callback: fn(): mixed => new FetchMergedPRs()->execute(),
+        );
+
+        $stars = Cache::remember(
+            key: 'github_stars',
+            ttl: now()->addHours(24),
+            callback: fn(): mixed => new FetchStars()->execute(),
+        );
+
+        return view('marketing.index', [
+            'accountNumbers' => $accountNumbers,
+            'pullRequests' => $pullRequests,
+            'stars' => $stars,
+            'marketingPage' => $marketingPage,
+        ]);
+    }
+}
