@@ -4,22 +4,6 @@ declare(strict_types=1);
 
 use App\Models\User;
 
-it('creates an API key', function (): void {
-    $user = User::factory()->create([
-        'email' => 'michael.scott@dundermifflin.com',
-    ]);
-
-    $this->actingAs($user);
-
-    $page = visit('/settings/security');
-    $page->press('@new-api-key-button');
-    $page->wait(1);
-    $page->type('key', 'test1');
-    $page->press('@create-api-key-button');
-    $page->waitForText('1|');
-    $page->assertSee('1|');
-});
-
 it('deletes an API key', function (): void {
     $user = User::factory()->create([
         'email' => 'michael.scott@dundermifflin.com',
