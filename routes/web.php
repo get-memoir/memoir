@@ -45,6 +45,12 @@ Route::middleware(['marketing.page'])->group(function (): void {
 });
 
 Route::middleware(['auth', 'verified', 'throttle:60,1', 'set.locale'])->group(function (): void {
+    // marketing
+    Route::post('/vote/{page}/helpful', [Marketing\MarketingVoteHelpfulController::class, 'update'])->name('marketing.vote-helpful');
+    Route::post('/vote/{page}/unhelpful', [Marketing\MarketingVoteUnhelpfulController::class, 'update'])->name('marketing.vote-unhelpful');
+    Route::delete('/vote/{page}', [Marketing\MarketingVoteController::class, 'update'])->name('marketing.destroy-vote');
+
+    // journal
     Route::get('journals', [Journal\JournalController::class, 'index'])->name('journal.index');
     Route::get('journals/create', [Journal\JournalController::class, 'create'])->name('journal.create');
     Route::post('journals', [Journal\JournalController::class, 'store'])->name('journal.store');
