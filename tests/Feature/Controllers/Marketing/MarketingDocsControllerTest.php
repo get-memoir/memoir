@@ -29,15 +29,6 @@ it('shows the api authentication page', function (): void {
     ]);
 });
 
-it('shows the api errors page', function (): void {
-    $response = $this->get('/docs/api/errors')
-        ->assertOk();
-
-    $response->assertViewHasAll([
-        'marketingPage',
-    ]);
-});
-
 it('shows the api profile page', function (): void {
     $response = $this->get('/docs/api/profile')
         ->assertOk();

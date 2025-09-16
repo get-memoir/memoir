@@ -9,7 +9,7 @@
 {{-- @llms-description: Why use PeopleOS? --}}
 {{-- @llms-route: /why --}}
 <x-marketing-layout :marketing-page="$marketingPage">
-  @section('json-ld')
+  {{-- @section('json-ld')
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -33,7 +33,7 @@
         }
       }
     </script>
-  @endsection
+  @endsection --}}
 
   <!-- breadcrumb -->
   <div class="border-b border-gray-200 py-3 text-sm">
@@ -51,10 +51,7 @@
         <div class="mb-5 max-w-none">
           <h1 id="introduction" class="mb-12 text-center text-2xl font-semibold">Why should you use PeopleOS?</h1>
 
-          <h2 id="problems" class="mb-4 flex items-center gap-x-3 text-lg font-semibold">
-            <x-phosphor-frown class="h-6 w-6 flex-shrink-0 text-amber-500" />
-            What kind of problem does PeopleOS solve?
-          </h2>
+
 
           <p>Consider these common scenarios:</p>
 
