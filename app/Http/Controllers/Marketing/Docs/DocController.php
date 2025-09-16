@@ -12,6 +12,10 @@ final class DocController extends Controller
 {
     public function index(Request $request): View
     {
-        return view('marketing.docs.api.introduction');
+        $marketingPage = $request->attributes->get('marketingPage');
+
+        return view('marketing.docs.api.introduction', [
+            'marketingPage' => $marketingPage,
+        ]);
     }
 }
