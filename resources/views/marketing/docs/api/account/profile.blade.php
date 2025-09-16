@@ -70,7 +70,7 @@
       </div>
       <div>
         <x-marketing.docs.code title="/api/me" verb="GET" verbClass="text-blue-700">
-          @include('docs.api.partials.profile-response')
+          @include('marketing.docs.api.partials.profile-response')
         </x-marketing.docs.code>
       </div>
     </div>
