@@ -28,7 +28,7 @@ it('marks a page as helpful', function (): void {
     ]);
 });
 
-it('unauthenticated user cannot mark page as helpful', function (): void {
+it('cant mark page as helpful for unauthenticated user', function (): void {
     $page = MarketingPage::factory()->create();
 
     $response = $this->post('/vote/' . $page->id . '/helpful');

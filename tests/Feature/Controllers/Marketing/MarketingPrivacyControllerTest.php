@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-it('returns ok response for privacy index', function (): void {
+it('shows the privacy index page', function (): void {
     $response = $this->get('/privacy')
         ->assertOk();
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-it('returns ok response for why index', function (): void {
+it('shows the why index page', function (): void {
     $response = $this->get('/why')
         ->assertOk();
 

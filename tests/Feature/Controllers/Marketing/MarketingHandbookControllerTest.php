@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-it('returns ok response for handbook index', function (): void {
+it('shows the handbook index page', function (): void {
     $response = $this->get('/company/handbook')
         ->assertOk();
 
@@ -11,7 +11,7 @@ it('returns ok response for handbook index', function (): void {
     ]);
 });
 
-it('returns ok response for handbook project', function (): void {
+it('shows the handbook project page', function (): void {
     $response = $this->get('/company/handbook/project')
         ->assertOk();
 
@@ -20,7 +20,7 @@ it('returns ok response for handbook project', function (): void {
     ]);
 });
 
-it('returns ok response for handbook principles', function (): void {
+it('shows the handbook principles page', function (): void {
     $response = $this->get('/company/handbook/principles')
         ->assertOk();
 
@@ -29,7 +29,7 @@ it('returns ok response for handbook principles', function (): void {
     ]);
 });
 
-it('returns ok response for handbook shipping', function (): void {
+it('shows the handbook shipping page', function (): void {
     $response = $this->get('/company/handbook/shipping')
         ->assertOk();
 
@@ -38,7 +38,7 @@ it('returns ok response for handbook shipping', function (): void {
     ]);
 });
 
-it('returns ok response for handbook money', function (): void {
+it('shows the handbook money page', function (): void {
     $response = $this->get('/company/handbook/money')
         ->assertOk();
 
@@ -47,7 +47,7 @@ it('returns ok response for handbook money', function (): void {
     ]);
 });
 
-it('returns ok response for handbook why', function (): void {
+it('shows the handbook why page', function (): void {
     $response = $this->get('/company/handbook/why-open-source')
         ->assertOk();
 
@@ -56,7 +56,7 @@ it('returns ok response for handbook why', function (): void {
     ]);
 });
 
-it('returns ok response for handbook where', function (): void {
+it('shows the handbook where page', function (): void {
     $response = $this->get('/company/handbook/where-am-I-going-with-this')
         ->assertOk();
 
@@ -65,7 +65,7 @@ it('returns ok response for handbook where', function (): void {
     ]);
 });
 
-it('returns ok response for handbook marketing', function (): void {
+it('shows the handbook marketing page', function (): void {
     $response = $this->get('/company/handbook/marketing')
         ->assertOk();
 
@@ -74,7 +74,7 @@ it('returns ok response for handbook marketing', function (): void {
     ]);
 });
 
-it('returns ok response for handbook social media', function (): void {
+it('shows the handbook social media page', function (): void {
     $response = $this->get('/company/handbook/social-media')
         ->assertOk();
 
@@ -83,7 +83,7 @@ it('returns ok response for handbook social media', function (): void {
     ]);
 });
 
-it('returns ok response for handbook writing', function (): void {
+it('shows the handbook writing page', function (): void {
     $response = $this->get('/company/handbook/writing')
         ->assertOk();
 
@@ -92,7 +92,7 @@ it('returns ok response for handbook writing', function (): void {
     ]);
 });
 
-it('returns ok response for handbook prioritize', function (): void {
+it('shows the handbook prioritize page', function (): void {
     $response = $this->get('/company/handbook/prioritize')
         ->assertOk();
 
@@ -101,7 +101,7 @@ it('returns ok response for handbook prioritize', function (): void {
     ]);
 });
 
-it('returns ok response for handbook philosophy', function (): void {
+it('shows the handbook philosophy page', function (): void {
     $response = $this->get('/company/handbook/product-philosophy')
         ->assertOk();
 

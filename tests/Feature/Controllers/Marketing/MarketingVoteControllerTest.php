@@ -29,7 +29,7 @@ it('destroys a marketing vote', function (): void {
     expect($page->fresh()->marked_helpful)->toBe(0);
 });
 
-it('unauthenticated user cannot destroy vote', function (): void {
+it('cant destroy vote for unauthenticated user', function (): void {
     $page = MarketingPage::factory()->create();
 
     $response = $this->delete('/vote/' . $page->id);

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-it('returns ok response for company index', function (): void {
+it('shows the company index page', function (): void {
     $response = $this->get('/company')
         ->assertOk();
 
