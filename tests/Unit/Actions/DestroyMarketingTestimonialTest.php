@@ -28,7 +28,7 @@ it('destroys a marketing testimony', function (): void {
         testimonial: $testimonial,
     ))->execute();
 
-    $this->assertDatabaseMissing('marketing_testimonies', [
+    $this->assertDatabaseMissing('marketing_testimonials', [
         'id' => $testimonial->id,
     ]);
 
