@@ -6,7 +6,7 @@ use App\Models\MarketingPage;
 use App\Models\User;
 use App\Actions\MarkMarketingPageAsUnhelpful;
 
-it('should mark marketing page as unhelpful for user', function () {
+it('should mark marketing page as unhelpful for user', function (): void {
     $user = User::factory()->create();
     $marketingPage = MarketingPage::factory()->create();
 
