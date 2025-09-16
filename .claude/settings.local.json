@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(php artisan test:*)",
-      "Bash(vendor/bin/pint:*)"
+      "Bash(vendor/bin/pint:*)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "WebFetch(domain:github.com)",
+      "WebSearch"
     ]
   },
   "enableAllProjectMcpServers": true,

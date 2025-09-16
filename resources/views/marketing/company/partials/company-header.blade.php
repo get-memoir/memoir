@@ -9,11 +9,11 @@
       <span class="text-gray-600">Handbook</span>
     </a>
     <a href="{{ route('marketing.company.handbook.index') }}" class="{{ request()->routeIs('marketing.company.handbook.*') ? 'border-b-3 border-blue-400' : 'border-b-3 border-transparent' }} group flex cursor-pointer flex-col items-center justify-center gap-x-2 gap-y-1 rounded-sm border px-2 py-1 transition-colors duration-150 hover:border-gray-400 hover:bg-white">
-      <x-phosphor-mountain-snow class="h-4 w-4 text-gray-500" />
+      <x-phosphor-mountains class="h-4 w-4 text-gray-500" />
       <span class="text-gray-600">Roadmap</span>
     </a>
     <a href="{{ route('marketing.company.handbook.index') }}" class="{{ request()->routeIs('marketing.company.handbook.*') ? 'border-b-3 border-blue-400' : 'border-b-3 border-transparent' }} group flex cursor-pointer flex-col items-center justify-center gap-x-2 gap-y-1 rounded-sm border px-2 py-1 transition-colors duration-150 hover:border-gray-400 hover:bg-white">
-      <x-phosphor-scroll-text class="h-4 w-4 text-gray-500" />
+      <x-phosphor-scroll class="h-4 w-4 text-gray-500" />
       <span class="text-gray-600">Changelog</span>
     </a>
   </div>
