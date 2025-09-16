@@ -51,12 +51,12 @@
         <!-- url parameters -->
         <x-marketing.docs.url-parameters>
           <p class="text-gray-500">This endpoint does not have any parameters.</p>
-        </x-docs.url-parameters>
+        </x-marketing.docs.url-parameters>
 
         <!-- query parameters -->
         <x-marketing.docs.query-parameters>
           <x-marketing.docs.attribute name="page" type="integer" description="The page number to retrieve. The first page is 1. If you don't provide this parameter, the first page will be returned." />
-        </x-docs.query-parameters>
+        </x-marketing.docs.query-parameters>
 
         <!-- response attributes -->
         <x-marketing.docs.response-attributes>
@@ -69,7 +69,7 @@
           <x-marketing.docs.attribute name="attributes.created_at" type="integer" description="The date and time the object was created, in Unix timestamp format." />
           <x-marketing.docs.attribute name="attributes.updated_at" type="integer" description="The date and time the object was last updated, in Unix timestamp format." />
           <x-marketing.docs.attribute name="links" type="object" description="The links to access the log." />
-        </x-docs.response-attributes>
+        </x-marketing.docs.response-attributes>
       </div>
       <div>
         <x-marketing.docs.code title="/api/settings/logs" verb="GET" verbClass="text-blue-700">
@@ -87,12 +87,12 @@
         <!-- url parameters -->
         <x-marketing.docs.url-parameters>
           <x-marketing.docs.attribute required name="log" type="integer" description="The ID of the log to get." />
-        </x-docs.url-parameters>
+        </x-marketing.docs.url-parameters>
 
         <!-- query parameters -->
         <x-marketing.docs.query-parameters>
           <p class="text-gray-500">No query parameters are available for this endpoint.</p>
-        </x-docs.query-parameters>
+        </x-marketing.docs.query-parameters>
 
         <!-- response attributes -->
         <x-marketing.docs.response-attributes>
@@ -105,7 +105,7 @@
           <x-marketing.docs.attribute name="attributes.created_at" type="integer" description="The date and time the object was created, in Unix timestamp format." />
           <x-marketing.docs.attribute name="attributes.updated_at" type="integer" description="The date and time the object was last updated, in Unix timestamp format." />
           <x-marketing.docs.attribute name="links" type="object" description="The links to access the log." />
-        </x-docs.response-attributes>
+        </x-marketing.docs.response-attributes>
       </div>
       <div>
         <x-marketing.docs.code title="/api/settings/logs/{log}" verb="GET" verbClass="text-blue-700">

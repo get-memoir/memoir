@@ -207,18 +207,18 @@
         <!-- url parameters -->
         <x-marketing.docs.url-parameters>
           <p class="text-gray-500">This endpoint does not have any parameters.</p>
-        </x-docs.url-parameters>
+        </x-marketing.docs.url-parameters>
 
         <!-- query parameters -->
         <x-marketing.docs.query-parameters>
           <p class="text-gray-500">This endpoint does not have any parameters.</p>
-        </x-docs.query-parameters>
+        </x-marketing.docs.query-parameters>
 
         <!-- response attributes -->
         <x-marketing.docs.response-attributes>
           <x-marketing.docs.attribute name="message" type="string" description="The message of the response." />
           <x-marketing.docs.attribute name="status" type="integer" description="The status code of the response." />
-        </x-docs.response-attributes>
+        </x-marketing.docs.response-attributes>
       </div>
       <div>
         <x-marketing.docs.code title="/api/health" verb="GET" verbClass="text-green-700">

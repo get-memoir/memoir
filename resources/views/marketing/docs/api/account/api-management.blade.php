@@ -65,12 +65,12 @@
         <!-- url parameters -->
         <x-marketing.docs.url-parameters>
           <p class="text-gray-500">This endpoint does not have any parameters.</p>
-        </x-docs.url-parameters>
+        </x-marketing.docs.url-parameters>
 
         <!-- query parameters -->
         <x-marketing.docs.query-parameters>
           <p class="text-gray-500">No query parameters are available for this endpoint.</p>
-        </x-docs.query-parameters>
+        </x-marketing.docs.query-parameters>
 
         <!-- response attributes -->
         <x-marketing.docs.response-attributes>
@@ -84,7 +84,7 @@
           <x-marketing.docs.attribute name="updated_at" type="integer" description="The date and time the object was last updated, in Unix timestamp format." />
           <x-marketing.docs.attribute name="links" type="object" description="The links of the API key." />
           <x-marketing.docs.attribute name="self" type="string" description="The URL of the API key." />
-        </x-docs.response-attributes>
+        </x-marketing.docs.response-attributes>
       </div>
       <div>
         <x-marketing.docs.code title="/api/settings/api" verb="GET" verbClass="text-blue-700">
@@ -102,12 +102,12 @@
         <!-- url parameters -->
         <x-marketing.docs.url-parameters>
           <x-marketing.docs.attribute required name="id" type="integer" description="The ID of the API key." />
-        </x-docs.url-parameters>
+        </x-marketing.docs.url-parameters>
 
         <!-- query parameters -->
         <x-marketing.docs.query-parameters>
           <p class="text-gray-500">No query parameters are available for this endpoint.</p>
-        </x-docs.query-parameters>
+        </x-marketing.docs.query-parameters>
 
         <!-- response attributes -->
         <x-marketing.docs.response-attributes>
@@ -121,7 +121,7 @@
           <x-marketing.docs.attribute name="updated_at" type="integer" description="The date and time the object was last updated, in Unix timestamp format." />
           <x-marketing.docs.attribute name="links" type="object" description="The links of the API key." />
           <x-marketing.docs.attribute name="self" type="string" description="The URL of the API key." />
-        </x-docs.response-attributes>
+        </x-marketing.docs.response-attributes>
       </div>
       <div>
         <x-marketing.docs.code title="/api/settings/api/{id}" verb="GET" verbClass="text-blue-700">
@@ -139,12 +139,12 @@
         <!-- url parameters -->
         <x-marketing.docs.url-parameters>
           <p class="text-gray-500">This endpoint does not have any parameters.</p>
-        </x-docs.url-parameters>
+        </x-marketing.docs.url-parameters>
 
         <!-- query parameters -->
         <x-marketing.docs.query-parameters>
           <x-marketing.docs.attribute required name="label" type="string" description="The name of the API key. Maximum 255 characters." />
-        </x-docs.query-parameters>
+        </x-marketing.docs.query-parameters>
 
         <!-- response attributes -->
         <x-marketing.docs.response-attributes>
@@ -158,7 +158,7 @@
           <x-marketing.docs.attribute name="updated_at" type="integer" description="The date and time the object was last updated, in Unix timestamp format." />
           <x-marketing.docs.attribute name="links" type="object" description="The links of the API key." />
           <x-marketing.docs.attribute name="self" type="string" description="The URL of the API key." />
-        </x-docs.response-attributes>
+        </x-marketing.docs.response-attributes>
       </div>
       <div>
         <x-marketing.docs.code title="/api/settings/api" verb="POST" verbClass="text-green-700">
@@ -176,17 +176,17 @@
         <!-- url parameters -->
         <x-marketing.docs.url-parameters>
           <x-marketing.docs.attribute required name="id" type="integer" description="The ID of the API key." />
-        </x-docs.url-parameters>
+        </x-marketing.docs.url-parameters>
 
         <!-- query parameters -->
         <x-marketing.docs.query-parameters>
           <p class="text-gray-500">No query parameters are available for this endpoint.</p>
-        </x-docs.query-parameters>
+        </x-marketing.docs.query-parameters>
 
         <!-- response attributes -->
         <x-marketing.docs.response-attributes>
           <p class="text-gray-500">No response attributes are available for this endpoint.</p>
-        </x-docs.response-attributes>
+        </x-marketing.docs.response-attributes>
       </div>
       <div>
         <x-marketing.docs.code title="/api/settings/api/{id}" verb="DELETE" verbClass="text-red-700">

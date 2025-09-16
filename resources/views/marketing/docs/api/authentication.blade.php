@@ -54,13 +54,13 @@
         <!-- url parameters -->
         <x-marketing.docs.url-parameters>
           <p class="text-gray-500">This endpoint does not have any parameters.</p>
-        </x-docs.url-parameters>
+        </x-marketing.docs.url-parameters>
 
         <!-- query parameters -->
         <x-marketing.docs.query-parameters>
           <x-marketing.docs.attribute required name="email" type="string" description="The email of the user. Maximum 255 characters." />
           <x-marketing.docs.attribute required name="password" type="string" description="The password of the user. Maximum 255 characters." />
-        </x-docs.query-parameters>
+        </x-marketing.docs.query-parameters>
 
         <!-- response attributes -->
         <x-marketing.docs.response-attributes>
@@ -68,7 +68,7 @@
           <x-marketing.docs.attribute name="status" type="integer" description="The status code of the response." />
           <x-marketing.docs.attribute name="data" type="object" description="The data of the response." />
           <x-marketing.docs.attribute name="token" type="string" description="The API key of the user." />
-        </x-docs.response-attributes>
+        </x-marketing.docs.response-attributes>
       </div>
       <div>
         <x-marketing.docs.code title="/api/login" verb="POST" verbClass="text-green-700">
@@ -108,18 +108,18 @@
         <!-- url parameters -->
         <x-marketing.docs.url-parameters>
           <p class="text-gray-500">This endpoint does not have any parameters.</p>
-        </x-docs.url-parameters>
+        </x-marketing.docs.url-parameters>
 
         <!-- query parameters -->
         <x-marketing.docs.query-parameters>
           <p class="text-gray-500">No query parameters are available for this endpoint.</p>
-        </x-docs.query-parameters>
+        </x-marketing.docs.query-parameters>
 
         <!-- response attributes -->
         <x-marketing.docs.response-attributes>
           <x-marketing.docs.attribute name="message" type="string" description="The message of the response." />
           <x-marketing.docs.attribute name="status" type="integer" description="The status code of the response." />
-        </x-docs.response-attributes>
+        </x-marketing.docs.response-attributes>
       </div>
       <div>
         <x-marketing.docs.code title="/api/logout" verb="DELETE" verbClass="text-red-700">
