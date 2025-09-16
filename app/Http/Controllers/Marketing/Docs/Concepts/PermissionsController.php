@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Docs\Concepts;
+namespace App\Http\Controllers\Marketing\Docs\Concepts;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
