@@ -53,35 +53,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Permissions used by the application
+    | GitHub token
     |--------------------------------------------------------------------------
     |
-    | This value defines all the permissions used by the application.
+    | This token is used to fetch the number of stars and merged pull requests from the GitHub API.
     |
     */
 
-    'permissions' => [
-        [
-            'name' => translate_key('Manage organizations settings'),
-            'description' => translate_key('Allows managing organization settings such as name, description, and other details.'),
-            'permissions' => [
-                [
-                    'key' => 'organization.edit',
-                    'name' => translate_key('Edit organization'),
-                    'description' => translate_key('Allows editing organization details such as name and settings, but not billing.'),
-                ],
-                [
-                    'key' => 'organization.delete',
-                    'name' => translate_key('Delete organization'),
-                    'description' => translate_key('Allows deleting the organization.'),
-                ],
-                [
-                    'key' => 'organization.permission.manage',
-                    'name' => translate_key('Manage permissions, roles and groups'),
-                    'description' => translate_key('Allows managing permissions, roles and groups within the organization.'),
-                ],
-            ],
-        ],
-    ],
+    'github_token' => env('GITHUB_TOKEN', ''),
 
 ];

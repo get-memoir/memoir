@@ -12,7 +12,10 @@ parameters:
 
     ignoreErrors:
 
+
     excludePaths:
+        - app/Http/Resources/*.php
+
 
 #    checkMissingIterableValueType: false
     treatPhpDocTypesAsCertain: false

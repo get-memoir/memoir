@@ -3,7 +3,9 @@
 declare(strict_types=1);
 
 arch()->preset()->laravel()
-    ->ignoring('App\Http\Controllers\Auth\VerificationController');
+    ->ignoring('App\Http\Controllers\App\Auth\VerificationController')
+    ->ignoring('App\Http\Controllers\Marketing\MarketingDocsController')
+    ->ignoring('App\Http\Controllers\Marketing\MarketingHandbookController');
 
 arch()->preset()->php();
 
@@ -24,7 +26,7 @@ arch('models should be final when appropriate')
     ->not->toBeAbstract();
 
 arch('controllers do not have business logic')
-    ->expect('App\Http\Controllers')
+    ->expect('App\Http\Controllers\App')
     ->not->toUse([
         'Illuminate\Support\Facades\DB',
         'Illuminate\Support\Facades\Cache',

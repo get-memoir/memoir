@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -25,6 +26,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property Carbon $created_at
  * @property string $password
  * @property string $locale
+ * @property Carbon|null $last_activity_at
  * @property Carbon|null $updated_at
  */
 final class User extends Authenticatable implements MustVerifyEmail
@@ -47,6 +49,7 @@ final class User extends Authenticatable implements MustVerifyEmail
         'password',
         'locale',
         'email_verified_at',
+        'last_activity_at',
     ];
 
     /**
@@ -69,6 +72,7 @@ final class User extends Authenticatable implements MustVerifyEmail
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'last_activity_at' => 'datetime',
         ];
     }
 
@@ -84,10 +88,30 @@ final class User extends Authenticatable implements MustVerifyEmail
 
     /**
      * Get the emailsSent associated with the user.
+     *
+     * @return HasMany<EmailSent, $this>
      */
     public function emailsSent(): HasMany
     {
         return $this->hasMany(EmailSent::class);
+    }
+
+    /**
+     * Get the marketing pages associated with the user.
+     *
+     * @return BelongsToMany<MarketingPage, $this, MarketingPageUser>
+     */
+    public function marketingPages(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            related: MarketingPage::class,
+            table: 'marketing_page_user',
+            foreignPivotKey: 'user_id',
+            relatedPivotKey: 'marketing_page_id',
+        )
+            ->using(MarketingPageUser::class)
+            ->withPivot('helpful', 'comment')
+            ->withTimestamps();
     }
 
     /**
