@@ -9,7 +9,7 @@
 {{-- @llms-description: Pricing information --}}
 {{-- @llms-route: /pricing --}}
 <x-marketing-layout :marketing-page="$marketingPage">
-  @section('json-ld')
+  {{-- @section('json-ld')
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -75,7 +75,7 @@
         ]
       }
     </script>
-  @endsection
+  @endsection --}}
 
   <!-- breadcrumb -->
   <div class="border-b border-gray-200 py-3 text-sm">

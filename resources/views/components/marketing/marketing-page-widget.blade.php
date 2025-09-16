@@ -73,11 +73,6 @@
   @endif
 
   <div class="flex flex-col items-center justify-between gap-x-4 p-4 sm:flex-row">
-    <p class="mb-1 flex items-center gap-x-1">
-      <x-phosphor-calendar class="h-4 w-4 text-gray-500" />
-      <span class="text-gray-500">Last updated on</span>
-      {{ $lastModified }}.
-    </p>
 
     <div class="flex items-center gap-x-2">
       <x-phosphor-github-logo class="h-4 w-4 text-gray-500" />
