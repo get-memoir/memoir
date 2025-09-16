@@ -80,7 +80,7 @@
     </p>
 
     <div class="flex items-center gap-x-2">
-      <x-phosphor-github class="h-4 w-4 text-gray-500" />
+      <x-phosphor-github-logo class="h-4 w-4 text-gray-500" />
       <a href="https://github.com/djaiss/peopleos" class="text-blue-500 hover:underline">Edit this page on Github</a>
     </div>
   </div>
