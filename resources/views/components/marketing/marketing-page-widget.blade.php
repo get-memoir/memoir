@@ -14,7 +14,7 @@
           <button type="submit" @disabled(! Auth::check()) class="group inline-flex items-center gap-x-2 rounded-sm border border-b-3 border-gray-400 px-3 py-2 transition-colors duration-150 hover:border-green-700 hover:bg-white">
             <x-phosphor-thumbs-up class="h-4 w-4 transform text-green-600 transition-transform group-hover:-rotate-12 group-hover:text-green-700" />
             <span class="text-sm text-gray-700 group-hover:text-gray-900">
-              {{ __('This page is helpful') }}
+              This page is helpful
             </span>
           </button>
         </form>
@@ -23,7 +23,7 @@
           <button type="submit" @disabled(! Auth::check()) class="group inline-flex items-center gap-x-2 rounded-sm border border-b-3 border-gray-400 px-3 py-2 transition-colors duration-150 hover:border-red-700 hover:bg-white">
             <x-phosphor-thumbs-down class="h-4 w-4 transform text-red-600 transition-transform group-hover:rotate-12 group-hover:text-red-700" />
             <span class="text-sm text-gray-700 group-hover:text-gray-900">
-              {{ __('This page is not helpful') }}
+              This page is not helpful
             </span>
           </button>
         </form>
@@ -48,9 +48,9 @@
       <x-image src="{{ asset('marketing/obama.webp') }}" srcset="{{ asset('marketing/obama@2x.webp') }} 2x" alt="Obama agreeing with you" height="100" width="100" />
 
       <div class="flex flex-col gap-y-2">
-        <p class="font-semibold">{{ __('Thanks for your feedback!') }}</p>
-        <p>{{ __('We will use your feedback to improve this page.') }}</p>
-        <p><a href="" class="text-blue-500 hover:underline">{{ __('Care to add a comment?') }}</a></p>
+        <p class="font-semibold">Thanks for your feedback!</p>
+        <p>We will use your feedback to improve this page.</p>
+        <p><a href="" class="text-blue-500 hover:underline">Care to add a comment?</a></p>
       </div>
     </div>
   @endif
@@ -67,7 +67,7 @@
         @csrf
         @method('DELETE')
 
-        <button type="submit" class="cursor-pointer text-blue-500 hover:underline">{{ __('Remove vote') }}</button>
+        <button type="submit" class="cursor-pointer text-blue-500 hover:underline">Remove vote</button>
       </form>
     </div>
   @endif
@@ -81,7 +81,7 @@
 
     <div class="flex items-center gap-x-2">
       <x-phosphor-github class="h-4 w-4 text-gray-500" />
-      <a href="https://github.com/djaiss/peopleos" class="text-blue-500 hover:underline">{{ __('Edit this page on Github') }}</a>
+      <a href="https://github.com/djaiss/peopleos" class="text-blue-500 hover:underline">Edit this page on Github</a>
     </div>
   </div>
 </div>

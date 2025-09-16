@@ -10,11 +10,11 @@
 {{-- @llms-route: /company/handbook --}}
 <x-marketing-handbook-layout :marketing-page="$marketingPage">
   <x-slot name="breadcrumb">
-    <a href="{{ route('marketing.index') }}" class="text-blue-500 hover:underline">{{ __('Home') }}</a>
+    <a href="{{ route('marketing.index') }}" class="text-blue-500 hover:underline">Home</a>
     <span class="text-gray-500">&gt;</span>
-    <a href="{{ route('marketing.company.index') }}" class="text-blue-500 hover:underline">{{ __('Company') }}</a>
+    <a href="{{ route('marketing.company.index') }}" class="text-blue-500 hover:underline">Company</a>
     <span class="text-gray-500">&gt;</span>
-    <span class="text-gray-600">{{ __('Handbook') }}</span>
+    <span class="text-gray-600">Handbook</span>
   </x-slot>
 
   <h1 class="mb-6 text-2xl font-bold">Our handbook</h1>
@@ -87,7 +87,7 @@
     </div>
 
     <div>
-      <x-marketing-page-widget :marketing-page="$marketingPage" :view-name="$viewName" />
+      <x-marketing-page-widget :marketing-page="$marketingPage" />
     </div>
   </div>
 </x-marketing-handbook-layout>

@@ -11,13 +11,13 @@
 {{-- @llms-route: /company/handbook/shipping --}}
 <x-marketing-handbook-layout :marketing-page="$marketingPage">
   <x-slot name="breadcrumb">
-    <a href="{{ route('marketing.index') }}" class="text-blue-500 hover:underline">{{ __('Home') }}</a>
+    <a href="{{ route('marketing.index') }}" class="text-blue-500 hover:underline">Home</a>
     <span class="text-gray-500">&gt;</span>
-    <a href="{{ route('marketing.company.index') }}" class="text-blue-500 hover:underline">{{ __('Company') }}</a>
+    <a href="{{ route('marketing.company.index') }}" class="text-blue-500 hover:underline">Company</a>
     <span class="text-gray-500">&gt;</span>
-    <a href="{{ route('marketing.company.handbook.index') }}" class="text-blue-500 hover:underline">{{ __('Handbook') }}</a>
+    <a href="{{ route('marketing.company.handbook.index') }}" class="text-blue-500 hover:underline">Handbook</a>
     <span class="text-gray-500">&gt;</span>
-    <span class="text-gray-600">{{ __('Shipping is better than not shipping') }}</span>
+    <span class="text-gray-600">Shipping is better than not shipping</span>
   </x-slot>
 
   <h1 class="mb-6 text-2xl font-bold">Shipping is better than not shipping</h1>
@@ -33,7 +33,7 @@
   </div>
 
   <div>
-    <x-marketing-page-widget :marketing-page="$marketingPage" :view-name="$viewName" />
+    <x-marketing-page-widget :marketing-page="$marketingPage" />
   </div>
 
   <x-slot name="rightSidebar">

@@ -38,9 +38,9 @@
   <!-- breadcrumb -->
   <div class="border-b border-gray-200 py-3 text-sm">
     <div class="mx-auto flex max-w-7xl items-center gap-x-2 px-6 lg:px-8 xl:px-0">
-      <a href="{{ route('marketing.index') }}" class="text-blue-500 hover:underline">{{ __('Home') }}</a>
+      <a href="{{ route('marketing.index') }}" class="text-blue-500 hover:underline">Home</a>
       <span class="text-gray-500">&gt;</span>
-      <span class="text-gray-600">{{ __('Why PeopleOS?') }}</span>
+      <span class="text-gray-600">Why PeopleOS?</span>
     </div>
   </div>
 
@@ -97,7 +97,7 @@
           <p>We also do not sell your data to third parties, and we do not use your data to sell ads. We do not use your data to sell you anything. Look, we are humans like you. We personally hate all the terrible things that big companies do with our data. We would never do that to you.</p>
         </div>
 
-        <x-marketing-page-widget :marketing-page="$marketingPage" :view-name="$viewName" />
+        <x-marketing-page-widget :marketing-page="$marketingPage" />
       </div>
 
       <!-- Sidebar -->
