@@ -38,7 +38,7 @@ final class JournalHelper
         return collect(range(1, 12))->mapWithKeys(fn(int $month): array => [
             $month => (object) [
                 'month' => $month,
-                'month_name' => date('F', mktime(0, 0, 0, $month, 1, $year)),
+                'month_name' => ucfirst(Carbon::createFromDate($year, $month, 1)->translatedFormat('F')),
                 'entries_count' => 0,
                 'is_selected' => $month === $selectedMonth,
                 'url' => route('journal.entry.show', [

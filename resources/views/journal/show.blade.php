@@ -32,4 +32,17 @@
       @endforeach
     </div>
   </div>
+
+  <div class="grid grid-cols-3 gap-4 p-4">
+    <div>
+      <h3 class="text-lg font-bold">Journal</h3>
+    </div>
+    <div>
+      <h3 class="text-lg font-bold">Journal</h3>
+    </div>
+    <div>
+      <x-module>sdfasdf</x-module>
+    </div>
+    dsff
+  </div>
 </x-app-layout>

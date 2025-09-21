@@ -23,10 +23,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $nickname
  * @property string $email
  * @property Carbon|null $email_verified_at
- * @property Carbon $created_at
  * @property string $password
  * @property string $locale
  * @property Carbon|null $last_activity_at
+ * @property string|null $mastodon_username
+ * @property Carbon $created_at
  * @property Carbon|null $updated_at
  */
 final class User extends Authenticatable implements MustVerifyEmail
@@ -50,6 +51,7 @@ final class User extends Authenticatable implements MustVerifyEmail
         'locale',
         'email_verified_at',
         'last_activity_at',
+        'mastodon_username',
     ];
 
     /**
@@ -73,6 +75,7 @@ final class User extends Authenticatable implements MustVerifyEmail
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'last_activity_at' => 'datetime',
+            'mastodon_username' => 'string',
         ];
     }
 
