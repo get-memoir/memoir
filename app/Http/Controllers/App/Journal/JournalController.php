@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers\App\Journal;
 
 use App\Actions\CreateJournal;
+use App\Helpers\JournalHelper;
 use App\Http\Controllers\Controller;
 use App\Http\ViewModels\Journal\JournalIndexViewModel;
 use Illuminate\View\View;
@@ -52,8 +53,29 @@ final class JournalController extends Controller
 
     public function show(Request $request): View
     {
+        $journal = $request->attributes->get('journal');
+
+        $day = (int) now()->format('d');
+        $month = (int) now()->format('m');
+        $year = (int) now()->format('Y');
+
+        $months = JournalHelper::getMonths(
+            journal: $journal,
+            year: $year,
+            selectedMonth: $month,
+        );
+
+        $days = JournalHelper::getDaysInMonth(
+            journal: $journal,
+            year: $year,
+            month: $month,
+            day: $day,
+        );
+
         return view('journal.show', [
-            'journal' => $request->attributes->get('journal'),
+            'journal' => $journal,
+            'months' => $months,
+            'days' => $days,
         ]);
     }
 }

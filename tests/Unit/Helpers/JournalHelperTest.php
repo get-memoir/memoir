@@ -17,7 +17,7 @@ it('gets all months in a given year', function (): void {
     );
 
     expect($collection)->toHaveCount(12);
-    expect($collection[2])->toEqual([
+    expect($collection[2])->toEqual((object) [
         'month' => 2,
         'month_name' => 'February',
         'entries_count' => 0,
