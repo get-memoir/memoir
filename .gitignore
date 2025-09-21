@@ -33,3 +33,4 @@ phpstan-baseline.neon
 CLAUDE.md
 .php-cs-fixer.cache
 .claude/settings.local.json
+AGENTS.md

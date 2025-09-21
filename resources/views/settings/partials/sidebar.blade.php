@@ -13,7 +13,7 @@
       <x-phosphor-bell class="h-4 w-4" />
       {{ __('Notifications') }}
     </a>
-    <a href="#" class="mt-4 flex items-center gap-3 rounded-lg px-2 py-1 text-red-600 hover:bg-red-50">
+    <a href="{{ route('settings.account.index') }}" class="{{ request()->routeIs('settings.account.index') ? 'bg-gray-100 font-medium text-gray-900' : 'text-gray-700 hover:bg-gray-50' }} mt-4 flex items-center gap-3 rounded-lg px-2 py-1 text-red-600 hover:bg-red-50">
       <x-phosphor-trash class="h-4 w-4" />
       {{ __('Danger zone') }}
     </a>
