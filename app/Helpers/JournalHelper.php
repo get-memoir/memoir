@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Helpers;
 
+use App\Models\Journal;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
@@ -23,15 +24,16 @@ final class JournalHelper
      *      'month_name' => 'January',
      *      'entries_count' => 5,
      *      'is_selected' => false,
-     *      'url' => '/journal/2023/01',
+     *      'url' => '/journal/journal-slug/2023/01',
      *   ]
      *
+     * @param Journal $journal The journal to get the months for.
      * @param int $year The year to get the months for.
      * @param int $selectedMonth The month to mark as selected.
      *
      * @return Collection The months in the year.
      */
-    public static function getMonths(int $year, int $selectedMonth): Collection
+    public static function getMonths(Journal $journal, int $year, int $selectedMonth): Collection
     {
         return collect(range(1, 12))->mapWithKeys(fn(int $month): array => [
             $month => [
@@ -40,9 +42,10 @@ final class JournalHelper
                 'entries_count' => 0,
                 'is_selected' => $month === $selectedMonth,
                 'url' => route('journal.entry.show', [
-                    'day' => 1,
+                    'slug' => $journal->slug,
                     'year' => $year,
                     'month' => $month,
+                    'day' => 1,
                 ]),
             ],
         ]);
@@ -60,13 +63,14 @@ final class JournalHelper
      *      'url' => '/journal/2023/01/01',
      *   ]
      *
+     * @param Journal $journal The journal to get the days for.
      * @param int $givenYear The year to get the days for.
      * @param int $givenMonth The month to get the days for.
      * @param int $givenDay The day to mark as selected.
      *
      * @return Collection The days in the month.
      */
-    public static function getDaysInMonth(int $givenYear, int $givenMonth, int $givenDay): Collection
+    public static function getDaysInMonth(Journal $journal, int $givenYear, int $givenMonth, int $givenDay): Collection
     {
         return collect(range(1, cal_days_in_month(CAL_GREGORIAN, $givenMonth, $givenYear)))
             ->mapWithKeys(fn(int $day): array => [
@@ -76,6 +80,7 @@ final class JournalHelper
                     'is_selected' => $day === $givenDay,
                     'has_blocks' => 0,
                     'url' => route('journal.entry.show', [
+                        'slug' => $journal->slug,
                         'year' => $givenYear,
                         'month' => $givenMonth,
                         'day' => $day,
