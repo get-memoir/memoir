@@ -100,6 +100,16 @@ final class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
+     * Get the Mastodon entries associated with the user.
+     *
+     * @return HasMany<JournalEntryMastodon, $this>
+     */
+    public function journalEntryMastodon(): HasMany
+    {
+        return $this->hasMany(JournalEntryMastodon::class);
+    }
+
+    /**
      * Get the marketing pages associated with the user.
      *
      * @return BelongsToMany<MarketingPage, $this, MarketingPageUser>

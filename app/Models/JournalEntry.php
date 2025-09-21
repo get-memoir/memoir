@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Class JournalEntry
@@ -52,6 +53,16 @@ final class JournalEntry extends Model
     public function journal(): BelongsTo
     {
         return $this->belongsTo(Journal::class);
+    }
+
+    /**
+     * Get the Mastodon entries associated with the journal entry.
+     *
+     * @return HasMany<JournalEntryMastodon, $this>
+     */
+    public function mastodonEntries(): HasMany
+    {
+        return $this->hasMany(JournalEntryMastodon::class);
     }
 
     /**
