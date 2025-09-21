@@ -58,6 +58,10 @@ Route::middleware(['auth', 'verified', 'throttle:60,1', 'set.locale'])->group(fu
     // journal
     Route::middleware(['journal'])->group(function (): void {
         Route::get('journals/{slug}', [Journal\JournalController::class, 'show'])->name('journal.show');
+
+        Route::middleware(['journal.entry'])->group(function (): void {
+            Route::get('journals/{slug}/entries/{year}/{month}/{day}', [Journal\JournalEntryController::class, 'show'])->name('journal.entry.show');
+        });
     });
 
     // settings redirect
