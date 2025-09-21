@@ -73,17 +73,17 @@ final class JournalHelper
     public static function getDaysInMonth(Journal $journal, int $year, int $month, int $day): Collection
     {
         return collect(range(1, cal_days_in_month(CAL_GREGORIAN, $month, $year)))
-            ->mapWithKeys(fn(int $day): array => [
-                $day => (object) [
-                    'day' => $day,
-                    'is_today' => Carbon::createFromDate($year, $month, $day)->isToday(),
-                    'is_selected' => $day === $day,
+            ->mapWithKeys(fn(int $currentDay): array => [
+                $currentDay => (object) [
+                    'day' => $currentDay,
+                    'is_today' => Carbon::createFromDate($year, $month, $currentDay)->isToday(),
+                    'is_selected' => $currentDay === $day,
                     'has_blocks' => 0,
                     'url' => route('journal.entry.show', [
                         'slug' => $journal->slug,
                         'year' => $year,
                         'month' => $month,
-                        'day' => $day,
+                        'day' => $currentDay,
                     ]),
                 ],
             ]);

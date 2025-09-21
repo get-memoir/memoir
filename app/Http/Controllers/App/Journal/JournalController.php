@@ -55,17 +55,21 @@ final class JournalController extends Controller
     {
         $journal = $request->attributes->get('journal');
 
+        $day = (int) now()->format('d');
+        $month = (int) now()->format('m');
+        $year = (int) now()->format('Y');
+
         $months = JournalHelper::getMonths(
             journal: $journal,
-            year: 2025,
-            selectedMonth: 9,
+            year: $year,
+            selectedMonth: $month,
         );
 
         $days = JournalHelper::getDaysInMonth(
             journal: $journal,
-            year: 2025,
-            month: 9,
-            day: 1,
+            year: $year,
+            month: $month,
+            day: $day,
         );
 
         return view('journal.show', [

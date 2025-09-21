@@ -9,7 +9,7 @@
   ]" />
 
   <div id="months-listing" class="bg-white">
-    <div class="mx-auto grid grid-cols-12 divide-x divide-gray-200">
+    <div class="mx-auto grid grid-cols-12 divide-x divide-gray-200 border-b border-gray-200">
       @foreach ($months as $month)
         <a href="{{ $month->url }}" class="group {{ $month->is_selected ? 'border-indigo-200 bg-indigo-50' : '' }} relative cursor-pointer px-2 py-1 text-center transition-colors hover:bg-indigo-50">
           <div class="text-sm font-medium text-gray-900">{{ $month->month_name }}</div>
@@ -20,14 +20,16 @@
     </div>
   </div>
 
-  <div id="days-listing" class="days-grid-{{ $days->count() }} mx-auto mb-8 grid auto-cols-[3rem] grid-flow-col gap-1 px-3 py-2 pb-2">
-  @foreach ($days as $day)
-    <div class="group {{ $day->is_selected ? 'border-indigo-400' : 'border-gray-200' }} {{ $day->is_today ? 'bg-indigo-50' : '' }} relative aspect-square cursor-pointer rounded-lg border text-center transition-colors hover:bg-indigo-50">
-      <a href="{{ $day->url }}" data-turbo="false" class="flex h-full flex-col items-center justify-center">
-        <span class="text-sm font-medium text-gray-900">{{ $day->day }}</span>
-        <div class="{{ $day->has_blocks === true ? 'bg-green-500' : 'bg-transparent' }} mt-1 h-1.5 w-1.5 rounded-full"></div>
-      </a>
+  <div id="days-listing" class="bg-white">
+    <div class="days-grid-{{ $days->count() }} mx-auto grid divide-x divide-gray-200">
+      @foreach ($days as $day)
+        <div class="group {{ $day->is_selected ? 'border-b-indigo-200 bg-indigo-50' : '' }} {{ $day->is_today ? 'bg-indigo-50' : '' }} relative aspect-square cursor-pointer border-b border-gray-200 text-center transition-colors hover:bg-indigo-50">
+          <a href="{{ $day->url }}" data-turbo="false" class="flex h-full flex-col items-center justify-center">
+            <span class="text-sm font-medium text-gray-900">{{ $day->day }}</span>
+            <div class="{{ $day->has_blocks === true ? 'bg-green-500' : 'bg-transparent' }} mt-1 h-1.5 w-1.5 rounded-full"></div>
+          </a>
+        </div>
+      @endforeach
     </div>
-  @endforeach
-</div>
+  </div>
 </x-app-layout>

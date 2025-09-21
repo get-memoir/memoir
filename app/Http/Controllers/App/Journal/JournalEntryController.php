@@ -14,18 +14,19 @@ final class JournalEntryController extends Controller
     public function show(Request $request): View
     {
         $journal = $request->attributes->get('journal');
+        $journalEntry = $request->attributes->get('journal_entry');
 
         $months = JournalHelper::getMonths(
             journal: $journal,
-            year: 2025,
-            selectedMonth: 2,
+            year: $journalEntry->year,
+            selectedMonth: $journalEntry->month,
         );
 
         $days = JournalHelper::getDaysInMonth(
             journal: $journal,
-            year: 2025,
-            month: 2,
-            day: 1,
+            year: $journalEntry->year,
+            month: $journalEntry->month,
+            day: $journalEntry->day,
         );
 
         return view('journal.show', [
