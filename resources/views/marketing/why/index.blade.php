@@ -9,31 +9,33 @@
 {{-- @llms-description: Why use PeopleOS? --}}
 {{-- @llms-route: /why --}}
 <x-marketing-layout :marketing-page="$marketingPage">
-  {{-- @section('json-ld')
+  {{--
+    @section('json-ld')
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "AboutPage",
-        "name": "Why use PeopleOS?",
-        "url": "https://peopleos.cloud/why",
-        "description": "Discover how PeopleOS helps you remember the small but important details about people you care about, and why open-source matters for your relationships.",
-        "mainEntity": {
-          "@type": "SoftwareApplication",
-          "name": "PeopleOS",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "All",
-          "url": "https://peopleos.cloud",
-          "description": "PeopleOS is an open-source personal CRM that helps you remember and manage the details that matter about your friends, family, and colleagues."
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "PeopleOS",
-          "url": "https://peopleos.cloud",
-          "logo": "https://peopleos.cloud/marketing/logo-full.png"
-        }
-      }
+    {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Why use PeopleOS?",
+    "url": "https://peopleos.cloud/why",
+    "description": "Discover how PeopleOS helps you remember the small but important details about people you care about, and why open-source matters for your relationships.",
+    "mainEntity": {
+    "@type": "SoftwareApplication",
+    "name": "PeopleOS",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "url": "https://peopleos.cloud",
+    "description": "PeopleOS is an open-source personal CRM that helps you remember and manage the details that matter about your friends, family, and colleagues."
+    },
+    "publisher": {
+    "@type": "Organization",
+    "name": "PeopleOS",
+    "url": "https://peopleos.cloud",
+    "logo": "https://peopleos.cloud/marketing/logo-full.png"
+    }
+    }
     </script>
-  @endsection --}}
+    @endsection
+  --}}
 
   <!-- breadcrumb -->
   <div class="border-b border-gray-200 py-3 text-sm">
@@ -50,8 +52,6 @@
       <div class="py-16 sm:border-r sm:border-gray-200 sm:pr-10">
         <div class="mb-5 max-w-none">
           <h1 id="introduction" class="mb-12 text-center text-2xl font-semibold">Why should you use PeopleOS?</h1>
-
-
 
           <p>Consider these common scenarios:</p>
 

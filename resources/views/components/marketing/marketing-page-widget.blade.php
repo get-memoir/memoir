@@ -13,18 +13,14 @@
           @csrf
           <button type="submit" @disabled(! Auth::check()) class="group inline-flex items-center gap-x-2 rounded-sm border border-b-3 border-gray-400 px-3 py-2 transition-colors duration-150 hover:border-green-700 hover:bg-white">
             <x-phosphor-thumbs-up class="h-4 w-4 transform text-green-600 transition-transform group-hover:-rotate-12 group-hover:text-green-700" />
-            <span class="text-sm text-gray-700 group-hover:text-gray-900">
-              This page is helpful
-            </span>
+            <span class="text-sm text-gray-700 group-hover:text-gray-900">This page is helpful</span>
           </button>
         </form>
         <form x-target="thanks" action="{{ route('marketing.vote-unhelpful', ['page' => $marketingPage->id]) }}" method="POST">
           @csrf
           <button type="submit" @disabled(! Auth::check()) class="group inline-flex items-center gap-x-2 rounded-sm border border-b-3 border-gray-400 px-3 py-2 transition-colors duration-150 hover:border-red-700 hover:bg-white">
             <x-phosphor-thumbs-down class="h-4 w-4 transform text-red-600 transition-transform group-hover:rotate-12 group-hover:text-red-700" />
-            <span class="text-sm text-gray-700 group-hover:text-gray-900">
-              This page is not helpful
-            </span>
+            <span class="text-sm text-gray-700 group-hover:text-gray-900">This page is not helpful</span>
           </button>
         </form>
       </div>
@@ -73,7 +69,6 @@
   @endif
 
   <div class="flex flex-col items-center justify-between gap-x-4 p-4 sm:flex-row">
-
     <div class="flex items-center gap-x-2">
       <x-phosphor-github-logo class="h-4 w-4 text-gray-500" />
       <a href="https://github.com/djaiss/peopleos" class="text-blue-500 hover:underline">Edit this page on Github</a>
