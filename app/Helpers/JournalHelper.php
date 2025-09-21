@@ -36,7 +36,7 @@ final class JournalHelper
     public static function getMonths(Journal $journal, int $year, int $selectedMonth): Collection
     {
         return collect(range(1, 12))->mapWithKeys(fn(int $month): array => [
-            $month => [
+            $month => (object) [
                 'month' => $month,
                 'month_name' => date('F', mktime(0, 0, 0, $month, 1, $year)),
                 'entries_count' => 0,
@@ -64,25 +64,25 @@ final class JournalHelper
      *   ]
      *
      * @param Journal $journal The journal to get the days for.
-     * @param int $givenYear The year to get the days for.
-     * @param int $givenMonth The month to get the days for.
-     * @param int $givenDay The day to mark as selected.
+     * @param int $year The year to get the days for.
+     * @param int $month The month to get the days for.
+     * @param int $day The day to mark as selected.
      *
      * @return Collection The days in the month.
      */
-    public static function getDaysInMonth(Journal $journal, int $givenYear, int $givenMonth, int $givenDay): Collection
+    public static function getDaysInMonth(Journal $journal, int $year, int $month, int $day): Collection
     {
-        return collect(range(1, cal_days_in_month(CAL_GREGORIAN, $givenMonth, $givenYear)))
+        return collect(range(1, cal_days_in_month(CAL_GREGORIAN, $month, $year)))
             ->mapWithKeys(fn(int $day): array => [
-                $day => [
+                $day => (object) [
                     'day' => $day,
-                    'is_today' => Carbon::createFromDate($givenYear, $givenMonth, $day)->isToday(),
-                    'is_selected' => $day === $givenDay,
+                    'is_today' => Carbon::createFromDate($year, $month, $day)->isToday(),
+                    'is_selected' => $day === $day,
                     'has_blocks' => 0,
                     'url' => route('journal.entry.show', [
                         'slug' => $journal->slug,
-                        'year' => $givenYear,
-                        'month' => $givenMonth,
+                        'year' => $year,
+                        'month' => $month,
                         'day' => $day,
                     ]),
                 ],
