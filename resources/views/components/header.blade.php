@@ -5,7 +5,7 @@
       <x-image src="logo/30x30" width="20" height="20" alt="Memoir logo" />
     </a>
 
-    <!-- selectors -->
+    <!-- dashboard -->
     <div class="flex items-center gap-1">
       <a class="rounded-md border border-transparent px-2 py-1 font-medium hover:border-gray-200 hover:bg-gray-100" href="/">{{ __('Dashboard') }}</a>
 
