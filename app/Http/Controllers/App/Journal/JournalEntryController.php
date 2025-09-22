@@ -30,6 +30,7 @@ final class JournalEntryController extends Controller
         );
 
         return view('journal.show', [
+            'journal' => $journal,
             'months' => $months,
             'days' => $days,
         ]);

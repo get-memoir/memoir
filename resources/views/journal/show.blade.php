@@ -5,7 +5,7 @@
 
   <x-breadcrumb :items="[
     ['label' => __('Dashboard'), 'route' => route('journal.index')],
-    ['label' => __('Journal')]
+    ['label' => $journal->name]
   ]" />
 
   <div id="months-listing" class="bg-white">

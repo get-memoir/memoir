@@ -22,7 +22,8 @@
     "pragmarx/google2fa-laravel": "^2.3",
     "resend/resend-laravel": "^0.21.0",
     "spatie/laravel-login-link": "^1.6",
-    "stevebauman/purify": "^6.3"
+    "stevebauman/purify": "^6.3",
+    "willvincent/feeds": "^2.7"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.16",
