@@ -9,20 +9,22 @@
     <div class="flex items-center gap-1">
       <a class="rounded-md border border-transparent px-2 py-1 font-medium hover:border-gray-200 hover:bg-gray-100" href="/">{{ __('Dashboard') }}</a>
 
-      <!-- separator -->
-      <span class="text-gray-500">/</span>
+      @if($journal)
+        <!-- separator -->
+        <span class="text-gray-500">/</span>
 
-      <!-- journal selector -->
-      <div class="flex items-center gap-0">
-        <a class="rounded-md border border-transparent px-2 py-1 font-medium hover:border-gray-200 hover:bg-gray-100">Mastodon</a>
-        <div class="rounded-md border border-transparent px-1 py-1 font-medium hover:border-gray-200 hover:bg-gray-100">
-          <x-phosphor-caret-up-down class="size-4 text-gray-600" />
+        <!-- journal selector -->
+        <div class="flex items-center gap-0">
+          <a class="rounded-md border border-transparent px-2 py-1 font-medium hover:border-gray-200 hover:bg-gray-100">{{ $journal->name }}</a>
+          <div class="rounded-md border border-transparent px-1 py-1 font-medium hover:border-gray-200 hover:bg-gray-100">
+            <x-phosphor-caret-up-down class="size-4 text-gray-600" />
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- separator -->
-      <a class="rounded-md border border-transparent px-2 py-1 font-medium hover:border-gray-200 hover:bg-gray-100" href="/">{{ __('Journal settings') }}</a>
+        <!-- separator -->
+        <a class="rounded-md border border-transparent px-2 py-1 font-medium hover:border-gray-200 hover:bg-gray-100" href="{{ route('journal.settings.index', $journal->slug) }}">{{ __('Journal settings') }}</a>
+      @endif
     </div>
 
     <!-- separator -->

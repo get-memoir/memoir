@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace App\Jobs;
 
+use App\Actions\CreateMastodonEntry;
+use App\Actions\CreateOrRetrieveJournalEntry;
+use App\Models\JournalEntry;
 use App\Models\User;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
@@ -41,15 +45,24 @@ final class FetchMastodonEntries implements ShouldQueue
     {
         $feed = FeedsFacade::make($this->user->mastodon_username);
 
-        $this->items = array(
+        $this->items = [
             'title'     => $feed->get_title(),
             'permalink' => $feed->get_permalink(),
             'items'     => $feed->get_items(),
-        );
+        ];
     }
 
     private function createOrUpdateEntries(): void
     {
-        dd($this->items);
+        foreach ($this->items['items'] as $item) {
+            $date = Carbon::parse($item->get_date());
+
+            (new CreateMastodonEntry(
+                mastodonUsername: $this->user->mastodon_username,
+                content: $item->get_content(),
+                url: $item->get_permalink(),
+                publishedAt: $date,
+            ))->execute();
+        }
     }
 }

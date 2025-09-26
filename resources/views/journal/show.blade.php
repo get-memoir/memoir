@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout :journal="$journal">
   <x-slot:title>
     {{ __('Journal') }}
   </x-slot>

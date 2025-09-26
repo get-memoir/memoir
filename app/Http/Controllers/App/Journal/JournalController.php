@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\App\Journal;
 
+use willvincent\Feeds\Facades\FeedsFacade;
 use App\Actions\CreateJournal;
 use App\Helpers\JournalHelper;
 use App\Http\Controllers\Controller;
