@@ -5,8 +5,31 @@
       <x-image src="logo/30x30" width="20" height="20" alt="Memoir logo" />
     </a>
 
-    <a class="rounded-md border border-transparent px-2 py-1 font-medium hover:border-gray-200 hover:bg-gray-100" href="/">{{ __('Dashboard') }}</a>
+    <!-- dashboard -->
+    <div class="flex items-center gap-1">
+      <a class="rounded-md border border-transparent px-2 py-1 font-medium hover:border-gray-200 hover:bg-gray-100" href="/">{{ __('Dashboard') }}</a>
+
+      @if ($journal)
+        <!-- separator -->
+        <span class="text-gray-500">/</span>
+
+        <!-- journal selector -->
+        <div class="flex items-center gap-0">
+          <a class="rounded-md border border-transparent px-2 py-1 font-medium hover:border-gray-200 hover:bg-gray-100">{{ $journal->name }}</a>
+          <div class="rounded-md border border-transparent px-1 py-1 font-medium hover:border-gray-200 hover:bg-gray-100">
+            <x-phosphor-caret-up-down class="size-4 text-gray-600" />
+          </div>
+        </div>
+
+        <!-- separator -->
+        <a class="rounded-md border border-transparent px-2 py-1 font-medium hover:border-gray-200 hover:bg-gray-100" href="{{ route('journal.settings.index', $journal->slug) }}">{{ __('Journal settings') }}</a>
+      @endif
+    </div>
+
+    <!-- separator -->
     <div class="-ml-4 flex-1"></div>
+
+    <!-- user menu -->
     <div class="flex items-center gap-1">
       <a class="flex items-center gap-2 rounded-md border border-transparent px-2 py-1 font-medium hover:border-gray-200 hover:bg-gray-100" href="/">
         <x-phosphor-magnifying-glass class="size-4 text-gray-600 transition-transform duration-150" />

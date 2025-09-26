@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Models\EmailSent;
 use App\Models\Journal;
+use App\Models\JournalEntryMastodon;
 use App\Models\MarketingPage;
 use App\Models\User;
 
@@ -23,6 +24,15 @@ it('has many emails sent', function (): void {
     ]);
 
     expect($user->emailsSent()->exists())->toBeTrue();
+});
+
+it('has many journal entry mastodon', function (): void {
+    $user = User::factory()->create();
+    JournalEntryMastodon::factory()->count(2)->create([
+        'user_id' => $user->id,
+    ]);
+
+    expect($user->journalEntryMastodon)->toHaveCount(2);
 });
 
 it('has many marketing pages', function (): void {

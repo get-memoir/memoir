@@ -23,6 +23,7 @@ return new class extends Migration {
             $table->string('password');
             $table->string('locale')->default('en');
             $table->datetime('last_activity_at')->nullable();
+            $table->string('mastodon_username')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

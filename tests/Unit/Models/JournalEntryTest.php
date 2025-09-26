@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Models\Journal;
 use App\Models\JournalEntry;
+use App\Models\JournalEntryMastodon;
 
 it('belongs to a journal', function (): void {
     $journal = Journal::factory()->create();
@@ -12,6 +13,15 @@ it('belongs to a journal', function (): void {
     ]);
 
     expect($journalEntry->journal()->exists())->toBeTrue();
+});
+
+it('has many mastodon entries', function (): void {
+    $journalEntry = JournalEntry::factory()->create();
+    JournalEntryMastodon::factory()->count(2)->create([
+        'journal_entry_id' => $journalEntry->id,
+    ]);
+
+    expect($journalEntry->mastodonEntries)->toHaveCount(2);
 });
 
 it('gets the date', function (): void {

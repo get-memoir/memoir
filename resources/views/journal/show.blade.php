@@ -1,11 +1,11 @@
-<x-app-layout>
+<x-app-layout :journal="$journal">
   <x-slot:title>
     {{ __('Journal') }}
   </x-slot>
 
   <x-breadcrumb :items="[
     ['label' => __('Dashboard'), 'route' => route('journal.index')],
-    ['label' => __('Journal')]
+    ['label' => $journal->name]
   ]" />
 
   <div id="months-listing" class="bg-white">
@@ -31,5 +31,18 @@
         </div>
       @endforeach
     </div>
+  </div>
+
+  <div class="grid grid-cols-3 gap-4 p-4">
+    <div>
+      <h3 class="text-lg font-bold">Journal</h3>
+    </div>
+    <div>
+      <h3 class="text-lg font-bold">Journal</h3>
+    </div>
+    <div>
+      <x-module>sdfasdf</x-module>
+    </div>
+    dsff
   </div>
 </x-app-layout>
