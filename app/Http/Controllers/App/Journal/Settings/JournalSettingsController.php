@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Http\Controllers\App\Journal\Settings;
 
 use App\Actions\UpdateJournalName;
-use App\Models\Journal;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -34,7 +33,7 @@ final class JournalSettingsController extends Controller
             ],
         ]);
 
-        $journal =new UpdateJournalName(
+        $journal = new UpdateJournalName(
             user: Auth::user(),
             journal: $request->attributes->get('journal'),
             name: $validated['journal_name'],

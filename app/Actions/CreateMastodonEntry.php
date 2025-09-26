@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace App\Actions;
 
 use App\Models\MastodonEntry;
-use App\Models\User;
 use Carbon\Carbon;
-use MagicLink\Actions\LoginAction;
-use MagicLink\MagicLink;
 
 final class CreateMastodonEntry
 {

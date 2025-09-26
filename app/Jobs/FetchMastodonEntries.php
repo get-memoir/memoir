@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace App\Jobs;
 
 use App\Actions\CreateMastodonEntry;
-use App\Actions\CreateOrRetrieveJournalEntry;
-use App\Models\JournalEntry;
 use App\Models\User;
 use Carbon\Carbon;
 use Exception;
@@ -43,7 +41,7 @@ final class FetchMastodonEntries implements ShouldQueue
 
     private function fetchFeed(): void
     {
-        $feed = FeedsFacade::make($this->user->mastodon_username);
+        $feed = FeedsFacade::make([$this->user->mastodon_username], 20, true);
 
         $this->items = [
             'title'     => $feed->get_title(),
@@ -57,12 +55,12 @@ final class FetchMastodonEntries implements ShouldQueue
         foreach ($this->items['items'] as $item) {
             $date = Carbon::parse($item->get_date());
 
-            (new CreateMastodonEntry(
+            new CreateMastodonEntry(
                 mastodonUsername: $this->user->mastodon_username,
                 content: $item->get_content(),
                 url: $item->get_permalink(),
                 publishedAt: $date,
-            ))->execute();
+            )->execute();
         }
     }
 }

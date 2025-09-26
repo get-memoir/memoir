@@ -83,14 +83,14 @@ it('allows valid names with letters numbers spaces hyphens and underscores', fun
         'name' => 'Old Name',
     ]);
 
-    $updatedUser = (new UpdateJournalName(
+    $updatedJournal = (new UpdateJournalName(
         user: $user,
         journal: $journal,
         name: $validName,
     ))->execute();
 
-    expect($updatedUser)->toBeInstanceOf(User::class);
-    expect($journal->refresh()->name)->toBe($validName);
+    expect($updatedJournal)->toBeInstanceOf(Journal::class);
+    expect($updatedJournal->name)->toBe($validName);
 })->with([
     'Simple Name',
     'Name-with-hyphens',

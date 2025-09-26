@@ -6,10 +6,8 @@
   <div class="flex gap-x-2">
     <p class="text-gray-500">{{ __('You are here:') }}</p>
     @foreach ($items as $item)
-
-
       @php
-      $id = $item['id'] ?? null;
+        $id = $item['id'] ?? null;
       @endphp
 
       @if (isset($item['route']))
