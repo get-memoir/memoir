@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.3.0](https://github.com/get-memoir/memoir/compare/get-memoir/memoir-v0.2.0...get-memoir/memoir-v0.3.0) (2025-09-26)
+
+
+### Features
+
+* add journal entry concept ([#14](https://github.com/get-memoir/memoir/issues/14)) ([e4424bb](https://github.com/get-memoir/memoir/commit/e4424bb364507e9a48c65f317545883ded75bec4))
+* concept of journal ([#9](https://github.com/get-memoir/memoir/issues/9)) ([74c1b36](https://github.com/get-memoir/memoir/commit/74c1b36d64cb06467f9dabc409ec058e26f33471))
+* delete account ([#13](https://github.com/get-memoir/memoir/issues/13)) ([1fcac00](https://github.com/get-memoir/memoir/commit/1fcac004ce90a9ddcbfa4338f4e5a1cbc0fca4bc))
+* display months and days ([#15](https://github.com/get-memoir/memoir/issues/15)) ([e81b6ef](https://github.com/get-memoir/memoir/commit/e81b6ef10d10a6e20e84f133bc88c56660137334))
+* get mastodon entries ([#16](https://github.com/get-memoir/memoir/issues/16)) ([e7946ae](https://github.com/get-memoir/memoir/commit/e7946aee90c31c92a54c442d56673f485bf064ef))
+
+
+### Miscellaneous Chores
+
+* add turbo for links prefetching and body swap ([#10](https://github.com/get-memoir/memoir/issues/10)) ([16f3ba9](https://github.com/get-memoir/memoir/commit/16f3ba92018033735dd85499a97519f1896a6d12))
+* better test architecture ([#12](https://github.com/get-memoir/memoir/issues/12)) ([4b7ca75](https://github.com/get-memoir/memoir/commit/4b7ca75aa663c1bd12584c6a871f3ec8931ccb34))
+* **deps:** bump @rollup/rollup-linux-x64-gnu from 4.48.0 to 4.50.1 ([#2](https://github.com/get-memoir/memoir/issues/2)) ([96101ac](https://github.com/get-memoir/memoir/commit/96101acc71d5b12f043e241ff09dbeb5d689e198))
+* **deps:** bump actions/setup-node from 4 to 5 ([#1](https://github.com/get-memoir/memoir/issues/1)) ([6e983ae](https://github.com/get-memoir/memoir/commit/6e983ae76bd9d7f1ac7a9b6be4fa986a0cdb74ab))
+
 ## [0.2.0](https://github.com/get-memoir/memoir/compare/get-memoir/memoir-v0.1.0...get-memoir/memoir-v0.2.0) (2025-09-14)
 
 
