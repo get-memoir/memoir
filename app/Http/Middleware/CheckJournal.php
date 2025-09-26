@@ -29,7 +29,6 @@ final class CheckJournal
             $journal = Journal::where('id', $id)
                 ->where('user_id', Auth::user()->id)
                 ->firstOrFail();
-            Log::info('Journal found', ['journal' => $journal]);
             $request->attributes->add(['journal' => $journal]);
 
             return $next($request);
